@@ -71,6 +71,25 @@
 }
 
 /*
+ * Carlito contains no Arabic glyphs, and the system fonts of many platforms
+ * either lack Arabic or do not support Arabic shaping. Arabic script is
+ * rendered using the bundled Noto Sans Arabic font (see
+ * font-noto-sans-arabic.css), which the standard font stacks include after
+ * Carlito. Within languages written in Arabic script, the same applies to all
+ * form controls (which otherwise use the system font), with platform Arabic
+ * fonts as further fallbacks.
+ */
+:lang(ar) body, :lang(ar) input, :lang(ar) button, :lang(ar) select, :lang(ar) textarea,
+:lang(fa) body, :lang(fa) input, :lang(fa) button, :lang(fa) select, :lang(fa) textarea,
+:lang(ur) body, :lang(ur) input, :lang(ur) button, :lang(ur) select, :lang(ur) textarea,
+:lang(ps) body, :lang(ps) input, :lang(ps) button, :lang(ps) select, :lang(ps) textarea,
+:lang(sd) body, :lang(sd) input, :lang(sd) button, :lang(sd) select, :lang(sd) textarea,
+:lang(ug) body, :lang(ug) input, :lang(ug) button, :lang(ug) select, :lang(ug) textarea,
+:lang(ckb) body, :lang(ckb) input, :lang(ckb) button, :lang(ckb) select, :lang(ckb) textarea {
+    font-family: Carlito, "Noto Sans Arabic", "Noto Naskh Arabic", "Segoe UI", Tahoma, "Geeza Pro", system-ui, sans-serif;
+}
+
+/*
  * Strings without a translation fall back to English. Within right-to-left
  * pages, blocks of text determine their own direction from their content,
  * such that untranslated English text (and its punctuation) is laid out
