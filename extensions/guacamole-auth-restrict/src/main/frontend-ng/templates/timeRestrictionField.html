@@ -1,0 +1,42 @@
+<div class="timeRestrictionField">
+    <table class="restrictionList" [hidden]="!(restrictions !== null && restrictions.length > 0)">
+        <tr>
+            <th>{{ 'RESTRICT.TABLE_HEADER_DAY' | translate }}</th>
+            <th>{{ 'RESTRICT.TABLE_HEADER_START_TIME' | translate }}</th>
+            <th>{{ 'RESTRICT.TABLE_HEADER_END_TIME' | translate }}</th>
+            <th>&nbsp;</th>
+        </tr>
+        @for (entry of restrictions; track entry) {
+        <tr class="restrictionListItem">
+            <td>
+                <select [(ngModel)]="entry.weekDay"
+                        [ngModelOptions]="modelOptions">
+                    @for (weekDay of weekDays; track weekDay.id) {
+                        <option [value]="weekDay.id">{{ weekDay.day }}</option>
+                    }
+                </select>
+            </td>
+            <td>
+                <input type="time"
+                       [ngModel]="toTime(entry.startTime)" (ngModelChange)="entry.startTime = fromTime($event)"
+                       [ngModelOptions]="modelOptions">
+            </td>
+            <td>
+                <input type="time"
+                       [ngModel]="toTime(entry.endTime)" (ngModelChange)="entry.endTime = fromTime($event)"
+                       [ngModelOptions]="modelOptions">
+            </td>
+            <td>
+                <img class="restrictionListItem"
+                     src="images/x-red.svg"
+                     alt="Remove entry"
+                     (click)="removeEntry(entry)">
+            </td>
+        </tr>
+        }
+    </table>
+    <button (click)="addEntry()"
+            class="restrictionListButton">
+        {{ 'RESTRICT.ACTION_ADD_ENTRY' | translate }}
+    </button>
+</div>

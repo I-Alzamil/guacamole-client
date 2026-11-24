@@ -1,0 +1,25 @@
+<div class="hostField">
+    <table class="restrictionList" [hidden]="!(restrictions !== null && restrictions.length > 0)">
+        <tr>
+            <th>{{ 'RESTRICT.TABLE_HEADER_HOST' | translate }}</th>
+            <th>&nbsp;</th>
+        </tr>
+        @for (entry of restrictions; track entry) {
+        <tr class="restrictionListItem">
+            <td>
+                <input type="text" [(ngModel)]="entry.host" [ngModelOptions]="modelOptions">
+            </td>
+            <td>
+                <img class="restrictionListItem"
+                     src="images/x-red.svg"
+                     alt="Remove entry"
+                     (click)="removeEntry(entry)">
+            </td>
+        </tr>
+        }
+    </table>
+    <button (click)="addEntry()"
+            class="restrictionListButton">
+        {{ 'RESTRICT.ACTION_ADD_ENTRY' | translate }}
+    </button>
+</div>

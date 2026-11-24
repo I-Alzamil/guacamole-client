@@ -1,0 +1,48 @@
+<div class="totp-code-field" [class.totp-details-visible]="detailsShown">
+
+    <!-- Enroll user if necessary -->
+    <div class="totp-enroll" [hidden]="!totpField.qrCode">
+
+        <p>{{ 'TOTP.HELP_ENROLL_BARCODE' | translate }}</p>
+
+        <!-- Barcode and key details -->
+        <div class="totp-qr-code"><img [src]="totpField.qrCode" (click)="openKeyURI()"></div>
+        <h3 class="totp-details-header">
+            {{'TOTP.SECTION_HEADER_DETAILS' | translate}}
+            <a class="totp-show-details" (click)="showDetails()">{{'TOTP.ACTION_SHOW_DETAILS' | translate}}</a>
+            <a class="totp-hide-details" (click)="hideDetails()">{{'TOTP.ACTION_HIDE_DETAILS' | translate}}</a>
+        </h3>
+        <table class="totp-details">
+            <tr>
+                <th>{{'TOTP.FIELD_HEADER_SECRET_KEY' | translate}}</th>
+                <td>@for (group of groupedSecret; track $index) {<span
+                          class="totp-detail">{{ group }}</span>}</td>
+            </tr>
+            <tr>
+                <th>{{'TOTP.FIELD_HEADER_DIGITS' | translate}}</th>
+                <td><span class="totp-detail">{{ totpField.digits }}</span></td>
+            </tr>
+            <tr>
+                <th>{{'TOTP.FIELD_HEADER_ALGORITHM' | translate}}</th>
+                <td><span class="totp-detail">{{ totpField.mode }}</span></td>
+            </tr>
+            <tr>
+                <th>{{'TOTP.FIELD_HEADER_INTERVAL' | translate}}</th>
+                <td><span class="totp-detail">{{ totpField.period }}</span></td>
+            </tr>
+        </table>
+
+        <p>{{ 'TOTP.HELP_ENROLL_VERIFY' | translate:{ DIGITS : totpField.digits } }}</p>
+
+    </div>
+
+    <!-- Field for entry of the current TOTP code -->
+    <div class="totp-code">
+        <input type="text"
+               placeholder="{{'TOTP.FIELD_PLACEHOLDER_CODE' |translate}}"
+               [attr.name]="totpField.name"
+               [(ngModel)]="model" autocomplete="off" autocorrect="off" autocapitalize="off"
+               autofocus [guacFocus]="true">
+    </div>
+
+</div>

@@ -161,4 +161,26 @@
 
     </dependencies>
 
+    <profiles>
+
+        <!-- Build for the Angular frontend of the web application (within
+            src/main/frontend-ng) rather than the AngularJS frontend -->
+        <profile>
+            <id>angular-frontend</id>
+            <properties>
+                <frontend.ng.entry>src/main/frontend-ng/samlModule.ts</frontend.ng.entry>
+                <frontend.ng.output>saml.min.js</frontend.ng.output>
+            </properties>
+            <build>
+                <plugins>
+                    <plugin>
+                        <groupId>com.github.eirslett</groupId>
+                        <artifactId>frontend-maven-plugin</artifactId>
+                    </plugin>
+                </plugins>
+            </build>
+        </profile>
+
+    </profiles>
+
 </project>

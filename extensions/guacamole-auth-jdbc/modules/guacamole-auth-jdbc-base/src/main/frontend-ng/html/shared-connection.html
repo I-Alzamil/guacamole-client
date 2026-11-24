@@ -1,0 +1,6 @@
+<meta name="after-children" content=".home-connection">
+
+<!-- The user sharing this connection (if any) -->
+<span class="jdbc-share-tag" [hidden]="!item.wrappedItem.attributes['jdbc-shared-by']">{{
+    'HOME.INFO_SHARED_BY' | translate:{USERNAME: item.wrappedItem.attributes['jdbc-shared-by']}
+}}</span>

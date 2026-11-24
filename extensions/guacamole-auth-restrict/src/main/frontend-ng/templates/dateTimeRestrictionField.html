@@ -1,0 +1,12 @@
+<div class="date-time-restriction-field">
+    <input type="datetime-local"
+           [disabled]="disabled()"
+           [id]="fieldId()"
+           [attr.name]="field().name"
+           [ngModel]="toDateTimeLocal(typedValue)" (ngModelChange)="typedValue = fromDateTimeLocal($event)"
+           [ngModelOptions]="modelOptions"
+           [guacFocus]="focused()"
+           placeholder="{{'RESTRICT.FIELD_PLACEHOLDER_DATE_TIME_RESTRICTION' | translate}}"
+           autocorrect="off"
+           autocapitalize="off">
+</div>
