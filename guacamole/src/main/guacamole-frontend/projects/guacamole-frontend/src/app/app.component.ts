@@ -35,6 +35,7 @@ import { ClipboardService } from './clipboard/services/clipboard.service';
 import { GuacFrontendEventArguments } from './events/types/GuacFrontendEventArguments';
 import { ApplyPatchesService } from './index/services/apply-patches.service';
 import { StyleLoaderService } from './index/services/style-loader.service';
+import { getLanguageDirection } from './locale/service/translation.service';
 import { GuacNotificationService } from './notification/services/guac-notification.service';
 import { Error } from './rest/types/Error';
 import { Field } from './rest/types/Field';
@@ -146,6 +147,15 @@ export class AppComponent implements OnInit, AfterViewChecked {
 
         // Load extension styles
         this.styleLoaderService.loadStyle(EXTENSION_STYLES_FILENAME);
+
+        // Lay out the page in the direction of the active language, such
+        // that right-to-left languages mirror the interface
+        this.translocoService.langChanges$
+            .pipe(takeUntilDestroyed(this.destroyRef))
+            .subscribe(language => {
+                this.document.documentElement.lang = language.replace(/_/g, '-');
+                this.document.documentElement.dir = getLanguageDirection(language);
+            });
 
         // Add default destination for input events
         const sink = new Guacamole.InputSink();

@@ -45,6 +45,44 @@ export const canonicalize = (identifier: string): string => {
 };
 
 /**
+ * The languages which are written right-to-left, for browsers which do not
+ * provide the text direction of a language through Intl.Locale.
+ */
+const RTL_LANGUAGES = ['ar', 'ckb', 'dv', 'fa', 'he', 'ps', 'sd', 'ug', 'ur', 'yi'];
+
+/**
+ * Returns the text direction of the language having the given key, such as
+ * "en", "ar" or "pt_BR".
+ *
+ * @param language
+ *     The key of the language.
+ *
+ * @returns
+ *     "rtl" if the language is written right-to-left, "ltr" otherwise.
+ */
+export const getLanguageDirection = (language: string): 'ltr' | 'rtl' => {
+
+    const tag = language.replace(/_/g, '-');
+
+    // Ask the browser, if it knows the text direction of languages
+    try {
+        const locale = new Intl.Locale(tag) as Intl.Locale & {
+            getTextInfo?: () => { direction: string },
+            textInfo?: { direction: string }
+        };
+        const textInfo = locale.getTextInfo?.() ?? locale.textInfo;
+        if (textInfo)
+            return textInfo.direction === 'rtl' ? 'rtl' : 'ltr';
+    }
+    catch {
+        // Not a valid language tag
+    }
+
+    return RTL_LANGUAGES.includes(tag.split('-')[0].toLowerCase()) ? 'rtl' : 'ltr';
+
+};
+
+/**
  * Service for providing a configuration object for Transloco.
  */
 @Injectable({
