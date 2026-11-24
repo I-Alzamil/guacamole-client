@@ -1,0 +1,288 @@
+<!--
+    Licensed to the Apache Software Foundation (ASF) under one
+    or more contributor license agreements.  See the NOTICE file
+    distributed with this work for additional information
+    regarding copyright ownership.  The ASF licenses this file
+    to you under the Apache License, Version 2.0 (the
+    "License"); you may not use this file except in compliance
+    with the License.  You may obtain a copy of the License at
+
+      http://www.apache.org/licenses/LICENSE-2.0
+
+    Unless required by applicable law or agreed to in writing,
+    software distributed under the License is distributed on an
+    "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+    KIND, either express or implied.  See the License for the
+    specific language governing permissions and limitations
+    under the License.
+-->
+<guac-viewport>
+
+    <!-- Client view -->
+    <div class="client-view">
+        <div class="client-view-content">
+
+            <!-- Central portion of view -->
+            <div class="client-body" [guacTouchDrag]="menuDrag">
+                @if (clientGroup(); as clientGroup) {
+                    <guac-tiled-clients [clientGroup]="clientGroup"
+                                        [emulateAbsoluteMouse]="menu.emulateAbsoluteMouse"
+                                        (closeClient)="closeClientTile($event)"
+                                        (focusedClientChange)="focusedClientChanged($event)" />
+                }
+            </div>
+
+            <!-- Bottom portion of view -->
+            <div class="client-bottom">
+
+                @if (showTextInput()) {
+                    <div class="text-input-container">
+                        <guac-text-input />
+                    </div>
+                }
+
+                @if (showOSK()) {
+                    <div class="keyboard-container">
+                        <guac-osk [layout]="'CLIENT.URL_OSK_LAYOUT' | translate" />
+                    </div>
+                }
+
+            </div>
+
+        </div>
+    </div>
+
+    <!-- File transfers -->
+    <div id="file-transfer-dialog" [hidden]="!hasTransfers()">
+        @if (clientGroup(); as clientGroup) {
+            <guac-file-transfer-manager [clientGroup]="clientGroup" />
+        }
+    </div>
+
+    <!-- Connection stability warning -->
+    <div id="connection-warning" [hidden]="!isConnectionUnstable()">
+        {{ 'CLIENT.TEXT_CLIENT_STATUS_UNSTABLE' | translate }}
+    </div>
+
+    <!-- Menu -->
+    <div class="menu" [class.open]="menuService.shown()" id="guac-menu">
+        @if (menuService.shown()) {
+            <div class="menu-content" [guacTouchDrag]="menuDrag">
+
+                <!-- Stationary header -->
+                <div class="header">
+
+                    @if (!rootConnectionGroups()) {
+                        <h2>{{ clientGroup() ? getName(clientGroup()!) : '' }}</h2>
+                    }
+                    @else {
+                        <h2 class="connection-select-menu">
+                            <guac-menu [menuTitle]="clientGroup() ? getName(clientGroup()!) : ''" [interactive]="true">
+                                <div class="all-connections">
+                                    <guac-group-list-filter [connectionGroups]="rootConnectionGroups()"
+                                                            [(filteredConnectionGroups)]="filteredRootConnectionGroups"
+                                                            [placeholder]="'CLIENT.FIELD_PLACEHOLDER_FILTER' | translate" />
+                                    <guac-group-list [connectionGroups]="filteredRootConnectionGroups()"
+                                                     [context]="connectionListContext" [pageSize]="10"
+                                                     [templates]="{ 'connection': connection, 'connection-group': connectionGroup }" />
+                                </div>
+                            </guac-menu>
+                        </h2>
+                    }
+
+                    <div class="share-menu" [hidden]="!canShareConnection()">
+                        <guac-menu [menuTitle]="'CLIENT.ACTION_SHARE' | translate">
+                            @for (sharingProfile of sharingProfileList(); track sharingProfile.identifier) {
+                                <ul><li><a (click)="share(sharingProfile)">{{ sharingProfile.name }}</a></li></ul>
+                            }
+                        </guac-menu>
+                    </div>
+
+                    <guac-user-menu [localActions]="clientMenuActions" />
+
+                </div>
+
+                <!-- Scrollable body -->
+                <div #menuBody class="menu-body">
+
+                    <!-- Connection sharing -->
+                    <div class="menu-section" id="share-links" [hidden]="!isShared()">
+                        <div class="content">
+                            <h3>{{ 'CLIENT.INFO_CONNECTION_SHARED' | translate }}</h3>
+                            <p class="description">{{ 'CLIENT.HELP_SHARE_LINK' | translate: { LINKS: getShareLinks().length } }}</p>
+                            <table>
+                                @for (link of getShareLinks(); track link.href) {
+                                    <tr>
+                                        <th>{{ link.name }}</th>
+                                        <td><a [href]="link.href" target="_blank" dir="ltr">{{ link.href }}</a></td>
+                                    </tr>
+                                }
+                            </table>
+                        </div>
+                    </div>
+
+                    <!-- Clipboard -->
+                    <div class="menu-section" id="clipboard-settings">
+                        <h3>{{ 'CLIENT.SECTION_HEADER_CLIPBOARD' | translate }}</h3>
+                        <div class="content">
+                            <p class="description">{{ 'CLIENT.HELP_CLIPBOARD' | translate }}</p>
+                            <guac-clipboard />
+                        </div>
+                    </div>
+
+                    <!-- Devices -->
+                    @if (focusedClient()?.filesystems?.length) {
+                        <div class="menu-section" id="devices">
+                            <h3>{{ 'CLIENT.SECTION_HEADER_DEVICES' | translate }}</h3>
+                            <div class="content">
+                                @for (filesystem of focusedClient()!.filesystems; track filesystem) {
+                                    <div class="device filesystem" (click)="filesystemMenuContents.set(filesystem)">
+                                        {{ filesystem.name }}
+                                    </div>
+                                }
+                            </div>
+                        </div>
+                    }
+
+                    <!-- Connection parameters which may be modified while
+                         the connection is open -->
+                    @if (focusedClient()?.protocol) {
+                        <div class="menu-section connection-parameters" id="connection-settings">
+                            <guac-form [namespace]="getProtocolNamespace(focusedClient()!.protocol) ?? undefined"
+                                       [content]="focusedClient()!.forms"
+                                       [model]="menu.connectionParameters"
+                                       [client]="focusedClient()"
+                                       [modelOnly]="true" />
+                        </div>
+                    }
+
+                    <!-- Input method -->
+                    <div class="menu-section" id="keyboard-settings">
+                        <h3>{{ 'CLIENT.SECTION_HEADER_INPUT_METHOD' | translate }}</h3>
+                        <div class="content">
+
+                            <!-- No IME -->
+                            <div class="choice">
+                                <label><input id="ime-none" name="input-method" type="radio" value="none"
+                                              [(ngModel)]="menu.inputMethod" (ngModelChange)="closeMenu()">
+                                    {{ 'CLIENT.NAME_INPUT_METHOD_NONE' | translate }}</label>
+                                <p class="caption"><label for="ime-none">{{ 'CLIENT.HELP_INPUT_METHOD_NONE' | translate }}</label></p>
+                            </div>
+
+                            <!-- Text input -->
+                            <div class="choice">
+                                <div class="figure"><label for="ime-text"><img src="images/settings/tablet-keys.svg" alt=""></label></div>
+                                <label><input id="ime-text" name="input-method" type="radio" value="text"
+                                              [(ngModel)]="menu.inputMethod" (ngModelChange)="closeMenu()">
+                                    {{ 'CLIENT.NAME_INPUT_METHOD_TEXT' | translate }}</label>
+                                <p class="caption"><label for="ime-text">{{ 'CLIENT.HELP_INPUT_METHOD_TEXT' | translate }}</label></p>
+                            </div>
+
+                            <!-- Guac OSK -->
+                            <div class="choice">
+                                <label><input id="ime-osk" name="input-method" type="radio" value="osk"
+                                              [(ngModel)]="menu.inputMethod" (ngModelChange)="closeMenu()">
+                                    {{ 'CLIENT.NAME_INPUT_METHOD_OSK' | translate }}</label>
+                                <p class="caption"><label for="ime-osk">{{ 'CLIENT.HELP_INPUT_METHOD_OSK' | translate }}</label></p>
+                            </div>
+
+                        </div>
+                    </div>
+
+                    <!-- Mouse mode -->
+                    <div class="menu-section" id="mouse-settings">
+                        <h3>{{ 'CLIENT.SECTION_HEADER_MOUSE_MODE' | translate }}</h3>
+                        <div class="content">
+                            <p class="description">{{ 'CLIENT.HELP_MOUSE_MODE' | translate }}</p>
+
+                            <!-- Touchscreen -->
+                            <div class="choice">
+                                <input name="mouse-mode" type="radio" id="absolute" [value]="true"
+                                       [(ngModel)]="menu.emulateAbsoluteMouse" (ngModelChange)="closeMenu()">
+                                <div class="figure">
+                                    <label for="absolute"><img src="images/settings/touchscreen.svg" [alt]="'CLIENT.NAME_MOUSE_MODE_ABSOLUTE' | translate"></label>
+                                    <p class="caption"><label for="absolute">{{ 'CLIENT.HELP_MOUSE_MODE_ABSOLUTE' | translate }}</label></p>
+                                </div>
+                            </div>
+
+                            <!-- Touchpad -->
+                            <div class="choice">
+                                <input name="mouse-mode" type="radio" id="relative" [value]="false"
+                                       [(ngModel)]="menu.emulateAbsoluteMouse" (ngModelChange)="closeMenu()">
+                                <div class="figure">
+                                    <label for="relative"><img src="images/settings/touchpad.svg" [alt]="'CLIENT.NAME_MOUSE_MODE_RELATIVE' | translate"></label>
+                                    <p class="caption"><label for="relative">{{ 'CLIENT.HELP_MOUSE_MODE_RELATIVE' | translate }}</label></p>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+
+                    <!-- Display options -->
+                    @if (focusedClient(); as focusedClient) {
+                        <div class="menu-section" id="display-settings">
+                            <h3>{{ 'CLIENT.SECTION_HEADER_DISPLAY' | translate }}</h3>
+                            <div class="content">
+                                <div id="zoom-settings">
+                                    <guac-client-zoom [client]="focusedClient" />
+                                </div>
+                            </div>
+                        </div>
+                    }
+
+                </div>
+
+            </div>
+        }
+    </div>
+
+    <!-- Filesystem menu -->
+    <div id="filesystem-menu" class="menu" [class.open]="isFilesystemMenuShown()">
+        @if (filesystemMenuContents(); as filesystem) {
+            <div class="menu-content">
+
+                <!-- Stationary header -->
+                <div class="header">
+                    <h2>{{ filesystem.name }}</h2>
+                    <button class="upload button" (guacUpload)="uploadFiles($event)">{{ 'CLIENT.ACTION_UPLOAD_FILES' | translate }}</button>
+                    <button class="back" (click)="filesystemMenuContents.set(null)">{{ 'CLIENT.ACTION_NAVIGATE_BACK' | translate }}</button>
+                </div>
+
+                <!-- Breadcrumbs -->
+                <div class="header breadcrumbs"><div class="breadcrumb root" (click)="changeDirectory(filesystem, filesystem.root)"></div>@for (file of getPath(filesystem.currentDirectory); track file) {<div class="breadcrumb" (click)="changeDirectory(filesystem, file)">{{ file.name }}</div>}</div>
+
+                <!-- Scrollable body -->
+                <div class="menu-body">
+                    <guac-file-browser [filesystem]="filesystem" />
+                </div>
+
+            </div>
+        }
+    </div>
+
+</guac-viewport>
+
+<ng-template #connection let-item let-context="context">
+    <div class="connection-select-menu-connection connection">
+        <input type="checkbox" [(ngModel)]="context.attachedClients[item.getClientIdentifier()]"
+               (ngModelChange)="context.updateAttachedClients(item.getClientIdentifier())">
+        <a [attr.href]="item.getClientURL()">
+            <div class="icon type" [class]="item.protocol"></div>
+            <span class="name">{{ item.name }}</span>
+        </a>
+    </div>
+</ng-template>
+
+<ng-template #connectionGroup let-item let-context="context">
+    <div class="connection-select-menu-connection-group connection-group">
+        <input type="checkbox" [hidden]="!item.balancing"
+               [(ngModel)]="context.attachedClients[item.getClientIdentifier()]"
+               (ngModelChange)="context.updateAttachedClients(item.getClientIdentifier())">
+        <a [attr.href]="item.getClientURL()">
+            @if (item.balancing) {
+                <div class="icon type balancer"></div>
+            }
+            <span class="name">{{ item.name }}</span>
+        </a>
+    </div>
+</ng-template>

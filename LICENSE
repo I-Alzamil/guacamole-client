@@ -220,6 +220,15 @@ Carlito (http://code.google.com/p/chromium/issues/detail?id=280557)
         SIL Open Font (guacamole/src/licenses/bundled/carlito/LICENSE)
 
 
+Noto Sans Arabic (https://github.com/notofonts/arabic)
+------------------------------------------------------
+
+    Version: v33
+    From: 'The Noto Project Authors' (https://github.com/notofonts/arabic)
+    License(s):
+        SIL Open Font (guacamole/src/licenses/bundled/noto-sans-arabic/LICENSE)
+
+
 DuoWeb Java SDK (https://github.com/duosecurity/duo_java)
 ---------------------------------------------------------
 

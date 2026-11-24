@@ -1,0 +1,102 @@
+/*
+ * Licensed to the Apache Software Foundation (ASF) under one
+ * or more contributor license agreements.  See the NOTICE file
+ * distributed with this work for additional information
+ * regarding copyright ownership.  The ASF licenses this file
+ * to you under the Apache License, Version 2.0 (the
+ * "License"); you may not use this file except in compliance
+ * with the License.  You may obtain a copy of the License at
+ *
+ *   http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing,
+ * software distributed under the License is distributed on an
+ * "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+ * KIND, either express or implied.  See the License for the
+ * specific language governing permissions and limitations
+ * under the License.
+ */
+
+/* Global Guacamole styles. Files are imported in a stable order (index base styles first, RTL overrides last). */
+@import "./styles/index/animation.css";
+@import "./styles/index/automatic-login-rejected.css";
+@import "./styles/index/buttons.css";
+@import "./styles/index/cloak.css";
+@import "./styles/index/fatal-page-error.css";
+@import "./styles/index/font-carlito.css";
+@import "./styles/index/font-noto-sans-arabic.css";
+@import "./styles/index/headers.css";
+@import "./styles/index/input.css";
+@import "./styles/index/lists.css";
+@import "./styles/index/loading.css";
+@import "./styles/index/logged-out.css";
+@import "./styles/index/other-connections.css";
+@import "./styles/index/sorted-tables.css";
+@import "./styles/index/status.css";
+@import "./styles/index/ui.css";
+@import "./styles/client/client.css";
+@import "./styles/client/connection-select-menu.css";
+@import "./styles/client/connection-warning.css";
+@import "./styles/client/display.css";
+@import "./styles/client/file-browser.css";
+@import "./styles/client/filesystem-menu.css";
+@import "./styles/client/file-transfer-dialog.css";
+@import "./styles/client/guac-menu.css";
+@import "./styles/client/keyboard.css";
+@import "./styles/client/menu.css";
+@import "./styles/client/notification.css";
+@import "./styles/client/share-menu.css";
+@import "./styles/client/thumbnail-display.css";
+@import "./styles/client/tiled-client-grid.css";
+@import "./styles/client/transfer.css";
+@import "./styles/client/transfer-manager.css";
+@import "./styles/client/viewport.css";
+@import "./styles/client/zoom.css";
+@import "./styles/clipboard/clipboard.css";
+@import "./styles/element/resize-sensor.css";
+@import "./styles/form/form.css";
+@import "./styles/form/form-field.css";
+@import "./styles/form/redirect-field.css";
+@import "./styles/form/terminal-color-scheme-field.css";
+@import "./styles/home/home.css";
+@import "./styles/import/help.css";
+@import "./styles/import/import.css";
+@import "./styles/list/filter.css";
+@import "./styles/list/pager.css";
+@import "./styles/list/user-item.css";
+@import "./styles/login/animation.css";
+@import "./styles/login/dialog.css";
+@import "./styles/login/input.css";
+@import "./styles/login/login.css";
+@import "./styles/manage/attributes.css";
+@import "./styles/manage/connection-parameter.css";
+@import "./styles/manage/forms.css";
+@import "./styles/manage/locationChooser.css";
+@import "./styles/manage/manage-user.css";
+@import "./styles/manage/manage-user-group.css";
+@import "./styles/manage/related-objects.css";
+@import "./styles/navigation/menu.css";
+@import "./styles/navigation/tabs.css";
+@import "./styles/navigation/user-menu.css";
+@import "./styles/notification/modal.css";
+@import "./styles/notification/notification.css";
+@import "./styles/osk/osk.css";
+@import "./styles/player/player.css";
+@import "./styles/player/playerDisplay.css";
+@import "./styles/player/progressIndicator.css";
+@import "./styles/player/seek.css";
+@import "./styles/player/textView.css";
+@import "./styles/settings/buttons.css";
+@import "./styles/settings/connection-list.css";
+@import "./styles/settings/history.css";
+@import "./styles/settings/history-player.css";
+@import "./styles/settings/input-method.css";
+@import "./styles/settings/mouse-mode.css";
+@import "./styles/settings/preferences.css";
+@import "./styles/settings/sessions.css";
+@import "./styles/settings/settings.css";
+@import "./styles/settings/user-group-list.css";
+@import "./styles/settings/user-list.css";
+@import "./styles/textInput/textInput.css";
+@import "./styles/angular.css";
+@import "./styles/rtl.css";

@@ -1,2 +1,4 @@
 src/main/frontend/dist/**/*
 src/main/resources/META-INF/services/*
+src/main/frontend-ng/dist/**/*
+src/main/frontend-ng/.angular/**/*

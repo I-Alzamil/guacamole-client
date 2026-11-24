@@ -1,0 +1,44 @@
+/*
+ * Licensed to the Apache Software Foundation (ASF) under one
+ * or more contributor license agreements.  See the NOTICE file
+ * distributed with this work for additional information
+ * regarding copyright ownership.  The ASF licenses this file
+ * to you under the Apache License, Version 2.0 (the
+ * "License"); you may not use this file except in compliance
+ * with the License.  You may obtain a copy of the License at
+ *
+ *   http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing,
+ * software distributed under the License is distributed on an
+ * "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+ * KIND, either express or implied.  See the License for the
+ * specific language governing permissions and limitations
+ * under the License.
+ */
+
+/*
+ * Angular components are rendered within their own host elements (such as
+ * <guac-login>), where the AngularJS directives replaced themselves with
+ * their template's root <div>. Hosts are therefore block-level by default,
+ * with zero specificity such that any existing rule takes precedence.
+ */
+:where(guac-app, guac-checkbox-field, guac-client, guac-client-notification, guac-client-page, guac-client-panel, guac-client-user-count, guac-client-zoom, guac-clipboard, guac-date-field, guac-email-field, guac-file-browser, guac-file-transfer, guac-file-transfer-manager, guac-filter, guac-form, guac-form-field, guac-group-list, guac-group-list-filter, guac-home, guac-input-color, guac-key, guac-language-field, guac-login, guac-menu, guac-modal, guac-notification, guac-number-field, guac-osk, guac-page-list, guac-pager, guac-password-field, guac-pending-page, guac-recent-connections, guac-redirect-field, guac-section-tabs, guac-select-field, guac-terminal-color-scheme-field, guac-text-area-field, guac-text-field, guac-text-input, guac-thumbnail, guac-tiled-clients, guac-tiled-thumbnails, guac-time-field, guac-time-zone-field, guac-user-item, guac-user-menu, guac-username-field, guac-viewport) {
+    display: block;
+}
+
+/*
+ * Keys of the text input replaced themselves with a <button>, and must not
+ * affect layout.
+ */
+guac-key {
+    display: contents;
+}
+
+/*
+ * Elements hidden via the "hidden" attribute must remain hidden even if
+ * styled with an explicit display value.
+ */
+[hidden] {
+    display: none !important;
+}

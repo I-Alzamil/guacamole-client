@@ -55,6 +55,19 @@
         <connection>scm:git:https://git.wip-us.apache.org/repos/asf/guacamole-client.git</connection>
     </scm>
 
+    <properties>
+
+        <!-- The directory containing the web application frontend. This is
+            the AngularJS frontend by default, or the Angular frontend if the
+            "angular-frontend" profile is active. -->
+        <frontend.directory>src/main/frontend</frontend.directory>
+
+        <!-- The versions of Node.js and NPM used to build the frontend -->
+        <frontend.node.version>v24.13.0</frontend.node.version>
+        <frontend.npm.version>11.7.0</frontend.npm.version>
+
+    </properties>
+
     <build>
         <plugins>
 
@@ -64,7 +77,7 @@
                 <artifactId>frontend-maven-plugin</artifactId>
                 <version>1.11.3</version>
                 <configuration>
-                    <workingDirectory>src/main/frontend</workingDirectory>
+                    <workingDirectory>${frontend.directory}</workingDirectory>
                     <installDirectory>${project.build.directory}</installDirectory>
                 </configuration>
                 <executions>
@@ -74,8 +87,8 @@
                             <goal>install-node-and-npm</goal>
                         </goals>
                         <configuration>
-                            <nodeVersion>v24.13.0</nodeVersion>
-                            <npmVersion>11.7.0</npmVersion>
+                            <nodeVersion>${frontend.node.version}</nodeVersion>
+                            <npmVersion>${frontend.npm.version}</npmVersion>
                         </configuration>
                     </execution>
                     <execution>
@@ -116,7 +129,7 @@
                             <outputDirectory>${dependency.list.directory}</outputDirectory>
                             <resources>
                                 <resource>
-                                    <directory>src/main/frontend/dist</directory>
+                                    <directory>${frontend.directory}/dist</directory>
                                     <includes>
                                         <include>npm-dependencies.txt</include>
                                     </includes>
@@ -149,7 +162,7 @@
 
                         <!-- Add frontend folder to war package ... -->
                         <resource>
-                            <directory>src/main/frontend/dist</directory>
+                            <directory>${frontend.directory}/dist</directory>
                             <excludes>
                                 <exclude>translations/*.json</exclude>
                                 <exclude>index.html</exclude>
@@ -159,7 +172,7 @@
 
                         <!-- ... but filter index.html and translation strings -->
                         <resource>
-                            <directory>src/main/frontend/dist</directory>
+                            <directory>${frontend.directory}/dist</directory>
                             <filtering>true</filtering>
                             <includes>
                                 <include>translations/*.json</include>
@@ -355,5 +368,21 @@
         </dependency>
 
     </dependencies>
+
+    <profiles>
+
+        <!-- Build the web application using the Angular frontend (within
+            src/main/frontend-ng) rather than the AngularJS frontend. The
+            Angular frontend requires a newer version of Node.js. -->
+        <profile>
+            <id>angular-frontend</id>
+            <properties>
+                <frontend.directory>src/main/frontend-ng</frontend.directory>
+                <frontend.node.version>v24.22.2</frontend.node.version>
+                <frontend.npm.version>11.19.1</frontend.npm.version>
+            </properties>
+        </profile>
+
+    </profiles>
 
 </project>
