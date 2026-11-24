@@ -1,0 +1,24 @@
+{
+
+    "DATA_SOURCE_KEEPER_SECRETS_MANAGER" : {
+        "NAME" : "Keeper Secrets Manager"
+    },
+
+    "CONNECTION_ATTRIBUTES" : {
+        "SECTION_HEADER_KSM_CONFIG" : "Keeper Secrets Manager",
+        "FIELD_HEADER_KSM_USER_CONFIG_ENABLED" : "السماح بإعدادات KSM المقدمة من المستخدم"
+    },
+
+    "CONNECTION_GROUP_ATTRIBUTES" : {
+        "SECTION_HEADER_KSM_CONFIG" : "Keeper Secrets Manager",
+        "FIELD_HEADER_KSM_CONFIG" : "إعدادات خدمة KSM",
+        "ERROR_INVALID_KSM_CONFIG_BLOB" : "كتلة إعدادات KSM المرمّزة بصيغة base64 غير صالحة. يرجى التأكد من نسخ الكتلة كاملة.",
+        "ERROR_INVALID_KSM_ONE_TIME_TOKEN" : "الإعدادات المقدمة ليست رمز KSM صالحًا للاستخدام مرة واحدة ولا كتلة إعدادات مرمّزة بصيغة base64. يرجى التأكد من نسخ قيمة الرمز كاملة."
+    },
+
+    "USER_ATTRIBUTES" : {
+        "SECTION_HEADER_KSM_CONFIG" : "Keeper Secrets Manager",
+        "FIELD_HEADER_KSM_CONFIG" : "إعدادات خدمة KSM"
+    }
+
+}

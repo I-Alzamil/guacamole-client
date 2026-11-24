@@ -1,0 +1,39 @@
+{
+
+    "DATA_SOURCE_TOTP" : {
+        "NAME" : "واجهة TOTP للمصادقة الثنائية"
+    },
+
+    "LOGIN" : {
+        "FIELD_HEADER_GUAC_TOTP" : ""
+    },
+
+    "TOTP" : {
+        "ACTION_HIDE_DETAILS" : "إخفاء",
+        "ACTION_SHOW_DETAILS" : "إظهار",
+        "FIELD_HEADER_ALGORITHM" : "الخوارزمية:",
+        "FIELD_HEADER_DIGITS" : "عدد الأرقام:",
+        "FIELD_HEADER_INTERVAL" : "الفترة:",
+        "FIELD_HEADER_SECRET_KEY" : "المفتاح السري:",
+        "FIELD_PLACEHOLDER_CODE" : "رمز المصادقة",
+        "INFO_CODE_REQUIRED" : "يرجى إدخال رمز المصادقة للتحقق من هويتك.",
+        "INFO_ENROLL_REQUIRED" : "تم تفعيل المصادقة متعددة العوامل على حسابك.",
+        "INFO_VERIFICATION_FAILED" : "فشل التحقق. يرجى المحاولة مرة أخرى.",
+        "HELP_ENROLL_BARCODE" : "لإكمال عملية التسجيل، امسح الرمز أدناه باستخدام تطبيق المصادقة الثنائية على هاتفك أو جهازك.",
+        "HELP_ENROLL_VERIFY" : "بعد مسح الرمز، أدخل رمز المصادقة المكوّن من {DIGITS} أرقام والمعروض للتحقق من نجاح التسجيل.",
+        "SECTION_HEADER_DETAILS" : "التفاصيل:"
+    },
+
+    "USER_ATTRIBUTES" : {
+        "FIELD_HEADER_GUAC_TOTP_DISABLED" : "تعطيل TOTP:",
+        "FIELD_HEADER_GUAC_TOTP_KEY_GENERATED" : "تم إنشاء المفتاح السري:",
+        "FIELD_HEADER_GUAC_TOTP_KEY_CONFIRMED" : "تم تأكيد جهاز المصادقة:",
+        "SECTION_HEADER_TOTP_ENROLLMENT_STATUS" : "حالة التسجيل في TOTP"
+    },
+
+    "USER_GROUP_ATTRIBUTES" : {
+        "FIELD_HEADER_GUAC_TOTP_DISABLED" : "تعطيل TOTP:",
+        "SECTION_HEADER_TOTP_USER_GROUP_CONFIG" : "إعدادات TOTP"
+    }
+
+}

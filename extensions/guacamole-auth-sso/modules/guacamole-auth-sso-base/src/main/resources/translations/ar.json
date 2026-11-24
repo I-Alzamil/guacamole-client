@@ -1,0 +1,32 @@
+{
+
+    "DATA_SOURCE_CAS" : {
+        "NAME" : "واجهة CAS للدخول الموحد"
+    },
+
+    "DATA_SOURCE_OPENID" : {
+        "NAME" : "واجهة OpenID للدخول الموحد"
+    },
+
+    "DATA_SOURCE_SAML" : {
+        "NAME" : "واجهة SAML للدخول الموحد"
+    },
+
+    "DATA_SOURCE_SSL" : {
+        "NAME" : "واجهة SSL/TLS للدخول الموحد"
+    },
+
+    "LOGIN" : {
+        "FIELD_HEADER_ID_TOKEN" : "",
+        "FIELD_HEADER_STATE" : "",
+        "FIELD_HEADER_TICKET" : "",
+        "INFO_IDP_REDIRECT_PENDING" : "يرجى الانتظار، جارٍ إعادة التوجيه إلى مزود الهوية...",
+        "INFO_REDIRECT_PENDING" : "يرجى الانتظار ريثما تتم إعادة توجيهك...",
+        "NAME_IDP_CAS" : "CAS",
+        "NAME_IDP_OPENID" : "OpenID",
+        "NAME_IDP_SAML" : "SAML",
+        "NAME_IDP_SSL" : "شهادة / بطاقة ذكية",
+        "SECTION_HEADER_SSO_OPTIONS" : "تسجيل الدخول باستخدام:"
+    }
+
+}

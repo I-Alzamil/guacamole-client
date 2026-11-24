@@ -6,6 +6,7 @@
     "namespace" : "display-stats",
 
     "translations" : [
+        "translations/ar.json",
         "translations/en.json",
         "translations/tr.json"
     ],

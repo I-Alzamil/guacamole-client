@@ -1,0 +1,16 @@
+{
+
+    "DATA_SOURCE_QUICKCONNECT" : {
+        "NAME" : "الاتصال السريع"
+    },
+
+    "QUICKCONNECT" : {
+        "ACTION_CONNECT" : "اتصال",
+        "ERROR_INVALID_URI" : "عنوان URI المحدد غير صالح",
+        "ERROR_NO_HOST" : "لم يُحدَّد مضيف",
+        "ERROR_NO_PROTOCOL" : "لم يُحدَّد بروتوكول",
+        "ERROR_NOT_ABSOLUTE_URI" : "عنوان URI ليس مطلقًا",
+        "FIELD_PLACEHOLDER_URI" : "أدخل عنوان URI للاتصال"
+    }
+
+}

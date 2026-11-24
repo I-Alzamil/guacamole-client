@@ -1,0 +1,11 @@
+{
+
+    "CLIENT" : {
+        "FIELD_HEADER_CLIENT_FRAMERATE" : "Guacamole (العميل):",
+        "FIELD_HEADER_DESKTOP_FRAMERATE" : "سطح المكتب البعيد:",
+        "FIELD_HEADER_DROP_FRAMERATE" : "الإطارات المفقودة:",
+        "FIELD_HEADER_SERVER_FRAMERATE" : "Guacamole (الخادم):",
+        "INFO_FRAMERATE" : "{VALUE} إطار/ث"
+    }
+
+}

@@ -1,0 +1,14 @@
+{
+
+    "DATA_SOURCE_RECORDING_STORAGE" : {
+        "NAME" : "تخزين تسجيلات الجلسات"
+    },
+
+    "RECORDING_STORAGE" : {
+        "INFO_GUACAMOLE_SESSION_RECORDING" : "تسجيل رسومي لجلسة سطح المكتب البعيد",
+        "INFO_SERVER_LOG" : "سجل الخادم/النظام",
+        "INFO_TYPESCRIPT" : "تسجيل نصي لجلسة الطرفية",
+        "INFO_TYPESCRIPT_TIMING" : "معلومات التوقيت للتسجيل النصي لجلسة الطرفية"
+    }
+
+}

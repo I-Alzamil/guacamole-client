@@ -1,0 +1,94 @@
+{
+
+    "LOGIN" : {
+        "ERROR_PASSWORD_BLANK" : "@:APP.ERROR_PASSWORD_BLANK",
+        "ERROR_PASSWORD_SAME" : "يجب أن تختلف كلمة المرور الجديدة عن كلمة المرور المنتهية الصلاحية.",
+        "ERROR_PASSWORD_MISMATCH" : "@:APP.ERROR_PASSWORD_MISMATCH",
+        "ERROR_NOT_VALID" : "حساب المستخدم هذا غير صالح حاليًا.",
+        "ERROR_NOT_ACCESSIBLE" : "الوصول إلى هذا الحساب غير مسموح به حاليًا. يرجى المحاولة مرة أخرى لاحقًا.",
+        "INFO_PASSWORD_EXPIRED" : "انتهت صلاحية كلمة المرور ويجب إعادة تعيينها. يرجى إدخال كلمة مرور جديدة للمتابعة.",
+        "FIELD_HEADER_NEW_PASSWORD" : "كلمة المرور الجديدة",
+        "FIELD_HEADER_CONFIRM_NEW_PASSWORD" : "تأكيد كلمة المرور الجديدة"
+    },
+
+    "CONNECTION_ATTRIBUTES" : {
+        "FIELD_HEADER_MAX_CONNECTIONS" : "الحد الأقصى لعدد الاتصالات:",
+        "FIELD_HEADER_MAX_CONNECTIONS_PER_USER" : "الحد الأقصى لعدد الاتصالات لكل مستخدم:",
+        "FIELD_HEADER_FAILOVER_ONLY" : "للاستخدام عند تجاوز الفشل فقط:",
+        "FIELD_HEADER_WEIGHT" : "وزن الاتصال:",
+        "FIELD_HEADER_GUACD_HOSTNAME" : "اسم المضيف:",
+        "FIELD_HEADER_GUACD_ENCRYPTION" : "التشفير:",
+        "FIELD_HEADER_GUACD_PORT" : "المنفذ:",
+        "FIELD_OPTION_GUACD_ENCRYPTION_EMPTY" : "",
+        "FIELD_OPTION_GUACD_ENCRYPTION_NONE" : "بدون (غير مشفر)",
+        "FIELD_OPTION_GUACD_ENCRYPTION_SSL" : "SSL / TLS",
+        "SECTION_HEADER_CONCURRENCY" : "حدود الاتصالات المتزامنة",
+        "SECTION_HEADER_LOAD_BALANCING" : "موازنة الحمل",
+        "SECTION_HEADER_GUACD" : "معلمات وكيل Guacamole (guacd)"
+    },
+
+    "CONNECTION_GROUP_ATTRIBUTES" : {
+        "FIELD_HEADER_ENABLE_SESSION_AFFINITY" : "تفعيل تقارب الجلسات:",
+        "FIELD_HEADER_MAX_CONNECTIONS" : "الحد الأقصى لعدد الاتصالات:",
+        "FIELD_HEADER_MAX_CONNECTIONS_PER_USER" : "الحد الأقصى لعدد الاتصالات لكل مستخدم:",
+        "SECTION_HEADER_CONCURRENCY" : "حدود الاتصالات المتزامنة (مجموعات الموازنة)"
+    },
+
+    "DATA_SOURCE_MYSQL" : {
+        "NAME" : "MySQL"
+    },
+
+    "DATA_SOURCE_MYSQL_SHARED" : {
+        "NAME" : "الاتصالات المشتركة (MySQL)"
+    },
+
+    "DATA_SOURCE_POSTGRESQL" : {
+        "NAME" : "PostgreSQL"
+    },
+
+    "DATA_SOURCE_POSTGRESQL_SHARED" : {
+        "NAME" : "الاتصالات المشتركة (PostgreSQL)"
+    },
+
+    "DATA_SOURCE_SQLSERVER" : {
+        "NAME" : "SQL Server"
+    },
+
+    "DATA_SOURCE_SQLSERVER_SHARED" : {
+        "NAME" : "الاتصالات المشتركة (SQL Server)"
+    },
+
+    "HOME" : {
+        "INFO_SHARED_BY" : "تمت المشاركة بواسطة {USERNAME}"
+    },
+
+    "PASSWORD_POLICY" : {
+        "ERROR_CONTAINS_USERNAME" : "لا يجوز أن تحتوي كلمات المرور على اسم المستخدم.",
+        "ERROR_REQUIRES_DIGIT" : "يجب أن تحتوي كلمات المرور على رقم واحد على الأقل.",
+        "ERROR_REQUIRES_MULTIPLE_CASE" : "يجب أن تحتوي كلمات المرور على أحرف كبيرة وصغيرة معًا.",
+        "ERROR_REQUIRES_NON_ALNUM" : "يجب أن تحتوي كلمات المرور على رمز واحد على الأقل.",
+        "ERROR_REUSED" : "سبق استخدام كلمة المرور هذه. يرجى عدم إعادة استخدام {HISTORY_SIZE, plural, one{كلمة المرور السابقة} two{كلمتي المرور السابقتين} few{أي من كلمات المرور الـ# السابقة} many{أي من كلمات المرور الـ# السابقة} other{أي من كلمات المرور الـ# السابقة}}.",
+        "ERROR_TOO_SHORT" : "يجب ألا يقل طول كلمات المرور عن {LENGTH, plural, one{حرف واحد} two{حرفين} few{# أحرف} many{# حرفًا} other{# حرف}}.",
+        "ERROR_TOO_YOUNG" : "سبق أن أُعيد تعيين كلمة المرور لهذا الحساب. يرجى الانتظار {WAIT, plural, one{يومًا واحدًا} two{يومين} few{# أيام} many{# يومًا} other{# يوم}} على الأقل قبل تغيير كلمة المرور مرة أخرى."
+    },
+
+    "USER_ATTRIBUTES" : {
+        "FIELD_HEADER_EXPIRED" : "انتهت صلاحية كلمة المرور:",
+        "FIELD_HEADER_ACCESS_WINDOW_END" : "عدم السماح بالوصول بعد:",
+        "FIELD_HEADER_ACCESS_WINDOW_START" : "السماح بالوصول بعد:",
+        "FIELD_HEADER_TIMEZONE" : "المنطقة الزمنية للمستخدم:",
+        "FIELD_HEADER_VALID_FROM" : "تفعيل الحساب بعد:",
+        "FIELD_HEADER_VALID_UNTIL" : "تعطيل الحساب بعد:",
+        "SECTION_HEADER_RESTRICTIONS" : "قيود الحساب",
+        "SECTION_HEADER_PROFILE" : "الملف الشخصي"
+    },
+
+    "USER_GROUP_ATTRIBUTES" : {
+        "SECTION_HEADER_RESTRICTIONS" : "قيود المجموعة"
+    },
+
+    "CONNECTION_PARAMETERS" : {
+        "DATABASE_PARAMETER_VALUE_TOO_LONG" : "القيمة المقدمة لمعلمة الاتصال {PARAMETER_NAME} تتجاوز الحد الأقصى المسموح به وهو {MAX_SIZE, plural, one{حرف واحد} two{حرفان} few{# أحرف} many{# حرفًا} other{# حرف}}."
+    }
+
+}

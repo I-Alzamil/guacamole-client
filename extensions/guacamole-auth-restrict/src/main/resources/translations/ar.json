@@ -1,0 +1,56 @@
+{
+
+    "DATA_SOURCE_LOGIN_RESTRICTIONS" : {
+        "NAME" : "قيود إضافية"
+    },
+
+    "CONNECTION_ATTRIBUTES" : {
+        "FIELD_HEADER_GUAC_RESTRICT_HOSTS_ALLOWED" : "المضيفون الذين يمكن الوصول إلى الاتصال منهم:",
+        "FIELD_HEADER_GUAC_RESTRICT_HOSTS_DENIED" : "المضيفون الذين لا يمكن الوصول إلى الاتصال منهم:",
+        "FIELD_HEADER_GUAC_RESTRICT_TIME_AFTER" : "التاريخ والوقت اللذان يمكن استخدام هذا الاتصال بعدهما:",
+        "FIELD_HEADER_GUAC_RESTRICT_TIME_ALLOWED" : "الأوقات المسموح فيها باستخدام الاتصال:",
+        "FIELD_HEADER_GUAC_RESTRICT_TIME_BEFORE" : "التاريخ والوقت اللذان يمكن استخدام هذا الاتصال قبلهما:",
+        "FIELD_HEADER_GUAC_RESTRICT_TIME_DENIED" : "الأوقات التي لا يمكن فيها استخدام الاتصال:",
+        "SECTION_HEADER_RESTRICT_LOGIN_FORM" : "قيود إضافية على الاتصال"
+    },
+
+    "CONNECTION_GROUP_ATTRIBUTES" : {
+        "FIELD_HEADER_GUAC_RESTRICT_HOSTS_ALLOWED" : "المضيفون الذين يمكن الوصول إلى مجموعة الاتصالات منهم:",
+        "FIELD_HEADER_GUAC_RESTRICT_HOSTS_DENIED" : "المضيفون الذين لا يمكن الوصول إلى مجموعة الاتصالات منهم:",
+        "FIELD_HEADER_GUAC_RESTRICT_TIME_AFTER" : "التاريخ والوقت اللذان يمكن استخدام مجموعة الاتصالات هذه بعدهما:",
+        "FIELD_HEADER_GUAC_RESTRICT_TIME_ALLOWED" : "الأوقات المسموح فيها باستخدام مجموعة الاتصالات:",
+        "FIELD_HEADER_GUAC_RESTRICT_TIME_BEFORE" : "التاريخ والوقت اللذان يمكن استخدام مجموعة الاتصالات هذه قبلهما:",
+        "FIELD_HEADER_GUAC_RESTRICT_TIME_DENIED" : "الأوقات التي لا يمكن فيها استخدام مجموعة الاتصالات:",
+        "SECTION_HEADER_RESTRICT_LOGIN_FORM" : "قيود إضافية على الاتصال"
+    },
+
+    "RESTRICT" : {
+        "ACTION_ADD_ENTRY" : "إضافة إدخال",
+        "ERROR_CONNECTION_NOT_ALLOWED_NOW" : "الاتصال غير متاح في هذا الوقت.",
+        "ERROR_CONNECTION_NOT_ALLOWED_FROM_HOST" : "الاتصال غير مسموح به من هذا المضيف.",
+        "ERROR_USER_LOGIN_NOT_ALLOWED_NOW" : "تسجيل دخول هذا المستخدم غير مسموح به في هذا الوقت.",
+        "ERROR_USER_LOGIN_NOT_ALLOWED_FROM_HOST" : "تسجيل دخول هذا المستخدم غير مسموح به من هذا المضيف.",
+        "FIELD_PLACEHOLDER_DATE_TIME_RESTRICTION" : "YYYY-MM-DD HH:MM:SS",
+        "TABLE_HEADER_DAY" : "اليوم",
+        "TABLE_HEADER_END_TIME" : "وقت الانتهاء",
+        "TABLE_HEADER_HOST" : "المضيف",
+        "TABLE_HEADER_START_TIME" : "وقت البدء"
+    },
+
+    "USER_ATTRIBUTES" : {
+        "FIELD_HEADER_GUAC_RESTRICT_HOSTS_ALLOWED" : "المضيفون الذين يمكن للمستخدم تسجيل الدخول منهم:",
+        "FIELD_HEADER_GUAC_RESTRICT_HOSTS_DENIED" : "المضيفون الذين لا يمكن للمستخدم تسجيل الدخول منهم:",
+        "FIELD_HEADER_GUAC_RESTRICT_TIME_ALLOWED" : "الأوقات المسموح فيها للمستخدم بتسجيل الدخول:",
+        "FIELD_HEADER_GUAC_RESTRICT_TIME_DENIED" : "الأوقات الممنوع فيها المستخدم من تسجيل الدخول:",
+        "SECTION_HEADER_RESTRICT_LOGIN_FORM" : "قيود إضافية على تسجيل الدخول"
+    },
+
+    "USER_GROUP_ATTRIBUTES" : {
+        "FIELD_HEADER_GUAC_RESTRICT_HOSTS_ALLOWED" : "المضيفون الذين يمكن للأعضاء تسجيل الدخول منهم:",
+        "FIELD_HEADER_GUAC_RESTRICT_HOSTS_DENIED" : "المضيفون الذين لا يمكن للأعضاء تسجيل الدخول منهم:",
+        "FIELD_HEADER_GUAC_RESTRICT_TIME_ALLOWED" : "الأوقات المسموح فيها للأعضاء بتسجيل الدخول:",
+        "FIELD_HEADER_GUAC_RESTRICT_TIME_DENIED" : "الأوقات الممنوع فيها الأعضاء من تسجيل الدخول:",
+        "SECTION_HEADER_RESTRICT_LOGIN_FORM" : "قيود إضافية على تسجيل الدخول"
+    }
+
+}

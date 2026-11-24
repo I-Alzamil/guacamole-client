@@ -1,0 +1,14 @@
+{
+
+    "DATA_SOURCE_DUO" : {
+        "NAME" : "واجهة Duo للمصادقة الثنائية"
+    },
+
+    "LOGIN" : {
+        "FIELD_HEADER_GUAC_DUO_SIGNED_RESPONSE" : "",
+        "INFO_DUO_VALIDATION_CODE_INCORRECT" : "رمز التحقق من Duo غير صحيح.",
+        "INFO_DUO_AUTH_REQUIRED" : "يرجى المصادقة عبر Duo للمتابعة.",
+        "INFO_DUO_REDIRECT_PENDING" : "يرجى الانتظار، جارٍ إعادة التوجيه إلى Duo..."
+    }
+
+}
