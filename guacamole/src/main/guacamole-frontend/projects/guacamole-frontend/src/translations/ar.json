@@ -1,0 +1,611 @@
+{
+
+    "NAME" : "العربية",
+
+    "APP" : {
+
+        "ACTION_ACKNOWLEDGE"        : "موافق",
+        "ACTION_CANCEL"             : "إلغاء",
+        "ACTION_CLEAR"              : "مسح",
+        "ACTION_CLONE"              : "نسخ",
+        "ACTION_CONTINUE"           : "متابعة",
+        "ACTION_DELETE"             : "حذف",
+        "ACTION_DELETE_SESSIONS"    : "إنهاء الجلسات",
+        "ACTION_DOWNLOAD"           : "تنزيل",
+        "ACTION_IMPORT"             : "استيراد",
+        "ACTION_LOGIN"              : "تسجيل الدخول",
+        "ACTION_LOGIN_AGAIN"        : "إعادة تسجيل الدخول",
+        "ACTION_LOGOUT"             : "تسجيل الخروج",
+        "ACTION_MANAGE_CONNECTIONS" : "الاتصالات",
+        "ACTION_MANAGE_PREFERENCES" : "التفضيلات",
+        "ACTION_MANAGE_SETTINGS"    : "الإعدادات",
+        "ACTION_MANAGE_SESSIONS"    : "الجلسات النشطة",
+        "ACTION_MANAGE_USERS"       : "المستخدمون",
+        "ACTION_MANAGE_USER_GROUPS" : "المجموعات",
+        "ACTION_NAVIGATE_BACK"      : "رجوع",
+        "ACTION_NAVIGATE_HOME"      : "الرئيسية",
+        "ACTION_PAUSE"              : "إيقاف مؤقت",
+        "ACTION_PLAY"               : "تشغيل",
+        "ACTION_SAVE"               : "حفظ",
+        "ACTION_SEARCH"             : "بحث",
+        "ACTION_SHARE"              : "مشاركة",
+        "ACTION_UPDATE_PASSWORD"    : "تحديث كلمة المرور",
+        "ACTION_VIEW_HISTORY"       : "السجل",
+        "ACTION_VIEW_RECORDING"     : "عرض",
+
+        "DIALOG_HEADER_ERROR" : "خطأ",
+
+        "ERROR_PAGE_UNAVAILABLE"  : "حدث خطأ ولا يمكن إكمال هذا الإجراء. إذا استمرت المشكلة، يرجى إبلاغ مسؤول النظام أو مراجعة سجلات النظام.",
+        "ERROR_PASSWORD_BLANK"    : "لا يمكن أن تكون كلمة المرور فارغة.",
+        "ERROR_PASSWORD_MISMATCH" : "كلمتا المرور غير متطابقتين.",
+        "ERROR_SINGLE_FILE_ONLY"  : "يرجى رفع ملف واحد فقط في كل مرة",
+
+        "FIELD_HEADER_PASSWORD"       : "كلمة المرور:",
+        "FIELD_HEADER_PASSWORD_AGAIN" : "أعد إدخال كلمة المرور:",
+        "FIELD_HEADER_RECORDING_WRITE_EXISTING" : "السماح بالكتابة في ملف تسجيل موجود:",
+        "FIELD_HEADER_TYPESCRIPT_WRITE_EXISTING" : "السماح بالكتابة في ملف نصي موجود:",
+
+        "FIELD_PLACEHOLDER_FILTER" : "تصفية",
+
+        "INFO_ACTIVE_USER_COUNT" : "{USERS, plural, zero{غير مستخدم حاليًا} one{قيد الاستخدام حاليًا من قِبل مستخدم واحد} two{قيد الاستخدام حاليًا من قِبل مستخدمَين} few{قيد الاستخدام حاليًا من قِبل # مستخدمين} many{قيد الاستخدام حاليًا من قِبل # مستخدمًا} other{قيد الاستخدام حاليًا من قِبل # مستخدم}}.",
+        "INFO_LOGGED_OUT"        : "لقد تم تسجيل خروجك.",
+
+        "TEXT_ANONYMOUS_USER"   : "مجهول",
+        "TEXT_HISTORY_DURATION" : "{VALUE} {UNIT, select, second{ثانية} minute{دقيقة} hour{ساعة} day{يوم} other{}}",
+        "TEXT_UNTRANSLATED" : "{MESSAGE}"
+
+    },
+
+    "CLIENT" : {
+
+        "ACTION_ACKNOWLEDGE"               : "@:APP.ACTION_ACKNOWLEDGE",
+        "ACTION_CANCEL"                    : "@:APP.ACTION_CANCEL",
+        "ACTION_CLEAR_CLIENT_MESSAGES"     : "@:APP.ACTION_CLEAR",
+        "ACTION_CLEAR_COMPLETED_TRANSFERS" : "@:APP.ACTION_CLEAR",
+        "ACTION_CONTINUE"                  : "@:APP.ACTION_CONTINUE",
+        "ACTION_DISCONNECT"                : "قطع الاتصال",
+        "ACTION_FULLSCREEN"                : "ملء الشاشة",
+        "ACTION_LOGOUT"                    : "@:APP.ACTION_LOGOUT",
+        "ACTION_NAVIGATE_BACK"             : "@:APP.ACTION_NAVIGATE_BACK",
+        "ACTION_NAVIGATE_HOME"             : "@:APP.ACTION_NAVIGATE_HOME",
+        "ACTION_RECONNECT"                 : "إعادة الاتصال",
+        "ACTION_SAVE_FILE"                 : "@:APP.ACTION_SAVE",
+        "ACTION_SHARE"                     : "@:APP.ACTION_SHARE",
+        "ACTION_SHOW_CLIPBOARD"            : "انقر لعرض محتويات الحافظة.",
+        "ACTION_UPLOAD_FILES"              : "رفع ملفات",
+
+        "DIALOG_HEADER_CONNECTING"       : "جارٍ الاتصال",
+        "DIALOG_HEADER_CONNECTION_ERROR" : "خطأ في الاتصال",
+        "DIALOG_HEADER_DISCONNECTED"     : "تم قطع الاتصال",
+
+        "ERROR_CLIENT_201"     : "تم إغلاق هذا الاتصال لأن الخادم مشغول. يرجى الانتظار بضع دقائق ثم المحاولة مرة أخرى.",
+        "ERROR_CLIENT_202"     : "أغلق خادم Guacamole الاتصال لأن سطح المكتب البعيد يستغرق وقتًا طويلًا في الاستجابة. يرجى المحاولة مرة أخرى أو التواصل مع مسؤول النظام.",
+        "ERROR_CLIENT_203"     : "واجه خادم سطح المكتب البعيد خطأً وأغلق الاتصال. يرجى المحاولة مرة أخرى أو التواصل مع مسؤول النظام.",
+        "ERROR_CLIENT_205"     : "يتطلب هذا الاتصال موردًا قيد الاستخدام حاليًا، والوصول المشترك إليه غير ممكن أو غير مسموح به. يرجى المحاولة لاحقًا.",
+        "ERROR_CLIENT_207"     : "يتعذر الوصول إلى خادم سطح المكتب البعيد حاليًا. إذا استمرت المشكلة، يرجى إبلاغ مسؤول النظام أو مراجعة سجلات النظام.",
+        "ERROR_CLIENT_208"     : "خادم سطح المكتب البعيد غير متاح حاليًا. إذا استمرت المشكلة، يرجى إبلاغ مسؤول النظام أو مراجعة سجلات النظام.",
+        "ERROR_CLIENT_209"     : "أغلق خادم سطح المكتب البعيد الاتصال لتعارضه مع اتصال آخر. يرجى المحاولة لاحقًا.",
+        "ERROR_CLIENT_20A"     : "أغلق خادم سطح المكتب البعيد الاتصال لأنه بدا غير نشط. إذا كان هذا غير مرغوب فيه أو غير متوقع، يرجى إبلاغ مسؤول النظام أو مراجعة إعدادات النظام.",
+        "ERROR_CLIENT_20B"     : "أغلق خادم سطح المكتب البعيد الاتصال قسرًا. إذا كان هذا غير مرغوب فيه أو غير متوقع، يرجى إبلاغ مسؤول النظام أو مراجعة سجلات النظام.",
+        "ERROR_CLIENT_301"     : "فشل تسجيل الدخول. يرجى إعادة الاتصال والمحاولة مرة أخرى.",
+        "ERROR_CLIENT_303"     : "رفض خادم سطح المكتب البعيد الوصول إلى هذا الاتصال. إذا كنت بحاجة إلى الوصول، يرجى أن تطلب من مسؤول النظام منح حسابك الصلاحية، أو مراجعة إعدادات النظام.",
+        "ERROR_CLIENT_308"     : "أغلق خادم Guacamole الاتصال لعدم تلقيه استجابة من متصفحك لمدة طويلة بدا معها أنه غير متصل. يحدث هذا عادةً بسبب مشكلات في الشبكة، مثل ضعف إشارة الشبكة اللاسلكية أو بطء سرعة الشبكة. يرجى التحقق من الشبكة والمحاولة مرة أخرى.",
+        "ERROR_CLIENT_31D"     : "يرفض خادم Guacamole الوصول إلى هذا الاتصال لأنك استنفدت الحد الأقصى للاتصالات المتزامنة لكل مستخدم. يرجى إغلاق اتصال أو أكثر ثم المحاولة مرة أخرى.",
+        "ERROR_CLIENT_DEFAULT" : "حدث خطأ داخلي في خادم Guacamole، وتم إنهاء الاتصال. إذا استمرت المشكلة، يرجى إبلاغ مسؤول النظام أو مراجعة سجلات النظام.",
+
+        "ERROR_TUNNEL_201"     : "رفض خادم Guacamole محاولة الاتصال هذه لكثرة الاتصالات النشطة. يرجى الانتظار بضع دقائق ثم المحاولة مرة أخرى.",
+        "ERROR_TUNNEL_202"     : "تم إغلاق الاتصال لأن الخادم يستغرق وقتًا طويلًا في الاستجابة. يحدث هذا عادةً بسبب مشكلات في الشبكة، مثل ضعف إشارة الشبكة اللاسلكية أو بطء سرعة الشبكة. يرجى التحقق من الشبكة والمحاولة مرة أخرى.",
+        "ERROR_TUNNEL_203"     : "واجه الخادم خطأً وأغلق الاتصال. يرجى المحاولة مرة أخرى أو التواصل مع مسؤول النظام.",
+        "ERROR_TUNNEL_204"     : "الاتصال المطلوب غير موجود. يرجى التحقق من اسم الاتصال والمحاولة مرة أخرى.",
+        "ERROR_TUNNEL_205"     : "هذا الاتصال قيد الاستخدام حاليًا، والوصول المتزامن إليه غير مسموح به. يرجى المحاولة لاحقًا.",
+        "ERROR_TUNNEL_207"     : "يتعذر الوصول إلى خادم Guacamole حاليًا. يرجى التحقق من الشبكة والمحاولة مرة أخرى.",
+        "ERROR_TUNNEL_208"     : "خادم Guacamole لا يقبل الاتصالات. يرجى التحقق من الشبكة والمحاولة مرة أخرى.",
+        "ERROR_TUNNEL_301"     : "ليست لديك صلاحية الوصول إلى هذا الاتصال لأنك لم تسجل الدخول. يرجى تسجيل الدخول والمحاولة مرة أخرى.",
+        "ERROR_TUNNEL_303"     : "ليست لديك صلاحية الوصول إلى هذا الاتصال. إذا كنت بحاجة إلى الوصول، يرجى أن تطلب من مسؤول النظام إضافتك إلى قائمة المستخدمين المسموح لهم، أو مراجعة إعدادات النظام.",
+        "ERROR_TUNNEL_308"     : "أغلق خادم Guacamole الاتصال لعدم تلقيه استجابة من متصفحك لمدة طويلة بدا معها أنه غير متصل. يحدث هذا عادةً بسبب مشكلات في الشبكة، مثل ضعف إشارة الشبكة اللاسلكية أو بطء سرعة الشبكة. يرجى التحقق من الشبكة والمحاولة مرة أخرى.",
+        "ERROR_TUNNEL_31D"     : "يرفض خادم Guacamole الوصول إلى هذا الاتصال لأنك استنفدت الحد الأقصى للاتصالات المتزامنة لكل مستخدم. يرجى إغلاق اتصال أو أكثر ثم المحاولة مرة أخرى.",
+        "ERROR_TUNNEL_DEFAULT" : "حدث خطأ داخلي في خادم Guacamole، وتم إنهاء الاتصال. إذا استمرت المشكلة، يرجى إبلاغ مسؤول النظام أو مراجعة سجلات النظام.",
+
+        "ERROR_UPLOAD_100"     : "نقل الملفات غير مدعوم أو غير مفعّل. يرجى التواصل مع مسؤول النظام أو مراجعة سجلات النظام.",
+        "ERROR_UPLOAD_201"     : "يجري حاليًا نقل عدد كبير جدًا من الملفات. يرجى انتظار اكتمال عمليات النقل الحالية ثم المحاولة مرة أخرى.",
+        "ERROR_UPLOAD_202"     : "تعذر نقل الملف لأن خادم سطح المكتب البعيد يستغرق وقتًا طويلًا في الاستجابة. يرجى المحاولة مرة أخرى أو التواصل مع مسؤول النظام.",
+        "ERROR_UPLOAD_203"     : "واجه خادم سطح المكتب البعيد خطأً أثناء النقل. يرجى المحاولة مرة أخرى أو التواصل مع مسؤول النظام.",
+        "ERROR_UPLOAD_204"     : "وجهة نقل الملف غير موجودة. يرجى التحقق من وجود الوجهة والمحاولة مرة أخرى.",
+        "ERROR_UPLOAD_205"     : "وجهة نقل الملف مقفلة حاليًا. يرجى انتظار اكتمال المهام الجارية ثم المحاولة مرة أخرى.",
+        "ERROR_UPLOAD_301"     : "ليست لديك صلاحية رفع هذا الملف لأنك لم تسجل الدخول. يرجى تسجيل الدخول والمحاولة مرة أخرى.",
+        "ERROR_UPLOAD_303"     : "ليست لديك صلاحية رفع هذا الملف. إذا كنت بحاجة إلى الوصول، يرجى مراجعة إعدادات النظام أو التواصل مع مسؤول النظام.",
+        "ERROR_UPLOAD_308"     : "توقف نقل الملف. يحدث هذا عادةً بسبب مشكلات في الشبكة، مثل ضعف إشارة الشبكة اللاسلكية أو بطء سرعة الشبكة. يرجى التحقق من الشبكة والمحاولة مرة أخرى.",
+        "ERROR_UPLOAD_31D"     : "يجري حاليًا نقل عدد كبير جدًا من الملفات. يرجى انتظار اكتمال عمليات النقل الحالية ثم المحاولة مرة أخرى.",
+        "ERROR_UPLOAD_DEFAULT" : "حدث خطأ داخلي في خادم Guacamole، وتم إنهاء الاتصال. إذا استمرت المشكلة، يرجى إبلاغ مسؤول النظام أو مراجعة سجلات النظام.",
+
+        "FIELD_PLACEHOLDER_FILTER" : "@:APP.FIELD_PLACEHOLDER_FILTER",
+
+        "HELP_CLIPBOARD"           : "سيظهر هنا النص المنسوخ أو المقصوص داخل Guacamole. ستؤثر التغييرات على النص أدناه في الحافظة البعيدة.",
+        "HELP_INPUT_METHOD_NONE"   : "لا تُستخدم أي طريقة إدخال. يُقبل الإدخال من لوحة مفاتيح فعلية متصلة.",
+        "HELP_INPUT_METHOD_OSK"    : "عرض لوحة مفاتيح Guacamole المدمجة على الشاشة وقبول الإدخال منها. تتيح لوحة المفاتيح على الشاشة كتابة تركيبات مفاتيح قد يتعذر كتابتها بطريقة أخرى (مثل Ctrl-Alt-Del).",
+        "HELP_INPUT_METHOD_TEXT"   : "السماح بكتابة النص ومحاكاة أحداث لوحة المفاتيح وفقًا للنص المكتوب. هذا ضروري للأجهزة التي تفتقر إلى لوحة مفاتيح فعلية مثل الهواتف المحمولة.",
+        "HELP_MOUSE_MODE"          : "يحدد كيفية تصرف الفأرة البعيدة عند اللمس.",
+        "HELP_MOUSE_MODE_ABSOLUTE" : "انقر للضغط. يحدث الضغط في موضع اللمس.",
+        "HELP_MOUSE_MODE_RELATIVE" : "اسحب لتحريك مؤشر الفأرة وانقر للضغط. يحدث الضغط في موضع المؤشر.",
+        "HELP_SHARE_LINK"          : "تتم مشاركة الاتصال الحالي، ويمكن لأي شخص الوصول إليه عبر {LINKS, plural, one{الرابط التالي} two{الرابطين التاليين} other{الروابط التالية}}:",
+
+        "INFO_ANONYMOUS_USER_COUNT" : "مجهول{COUNT, plural, one{} other{ (#)}}",
+        "INFO_CONNECTION_SHARED"    : "هذا الاتصال مُشارك الآن.",
+        "INFO_NO_FILE_TRANSFERS"    : "لا توجد عمليات نقل ملفات.",
+        "INFO_USER_COUNT"           : "{USERNAME}{COUNT, plural, one{} other{ (#)}}",
+
+        "NAME_INPUT_METHOD_NONE"   : "بدون",
+        "NAME_INPUT_METHOD_OSK"    : "لوحة المفاتيح على الشاشة",
+        "NAME_INPUT_METHOD_TEXT"   : "إدخال النص",
+        "NAME_MOUSE_MODE_ABSOLUTE" : "شاشة لمس",
+        "NAME_MOUSE_MODE_RELATIVE" : "لوحة لمس",
+
+        "SECTION_HEADER_CLIENT_MESSAGES" : "الرسائل",
+        "SECTION_HEADER_CLIPBOARD"       : "الحافظة",
+        "SECTION_HEADER_DEVICES"         : "الأجهزة",
+        "SECTION_HEADER_DISPLAY"         : "العرض",
+        "SECTION_HEADER_FILE_TRANSFERS"  : "نقل الملفات",
+        "SECTION_HEADER_INPUT_METHOD"    : "طريقة الإدخال",
+
+        "SECTION_HEADER_MOUSE_MODE"     : "وضع محاكاة الفأرة",
+
+        "TEXT_ANONYMOUS_USER_JOINED"      : "انضم مستخدم مجهول إلى الاتصال.",
+        "TEXT_ANONYMOUS_USER_LEFT"        : "غادر مستخدم مجهول الاتصال.",
+        "TEXT_ZOOM_AUTO_FIT"              : "ملاءمة نافذة المتصفح تلقائيًا",
+        "TEXT_CLIENT_STATUS_IDLE"         : "خامل.",
+        "TEXT_CLIENT_STATUS_CONNECTING"   : "جارٍ الاتصال بـ Guacamole...",
+        "TEXT_CLIENT_STATUS_DISCONNECTED" : "تم قطع اتصالك.",
+        "TEXT_CLIENT_STATUS_UNSTABLE"     : "يبدو أن الاتصال الشبكي بخادم Guacamole غير مستقر.",
+        "TEXT_CLIENT_STATUS_WAITING"      : "تم الاتصال بـ Guacamole. في انتظار الاستجابة...",
+        "TEXT_USER_JOINED"                : "انضم {USERNAME} إلى الاتصال.",
+        "TEXT_USER_LEFT"                  : "غادر {USERNAME} الاتصال.",
+        "TEXT_RECONNECT_COUNTDOWN"        : "إعادة الاتصال خلال {REMAINING, plural, one{ثانية واحدة} two{ثانيتين} few{# ثوانٍ} other{# ثانية}}...",
+        "TEXT_FILE_TRANSFER_PROGRESS"     : "{PROGRESS} {UNIT, select, b{بايت} kb{ك.بايت} mb{م.بايت} gb{ج.بايت} other{}}"
+
+    },
+
+    "COLOR_SCHEME" : {
+
+        "ACTION_HIDE_DETAILS" : "إخفاء",
+        "ACTION_SHOW_DETAILS" : "إظهار",
+
+        "FIELD_HEADER_BACKGROUND" : "الخلفية",
+        "FIELD_HEADER_FOREGROUND" : "النص",
+
+        "FIELD_OPTION_CUSTOM" : "مخصص...",
+
+        "SECTION_HEADER_DETAILS" : "التفاصيل:"
+
+    },
+
+    "IMPORT": {
+
+        "ACTION_BROWSE"             : "استعراض ملف",
+        "ACTION_VIEW_FORMAT_HELP"   : "عرض إرشادات التنسيق",
+        "ACTION_IMPORT_CONNECTIONS" : "استيراد الاتصالات",
+
+        "DIALOG_HEADER_SUCCESS" : "تمت العملية بنجاح",
+
+        "ERROR_AMBIGUOUS_CSV_HEADER"         : "ترويسة CSV \"{HEADER}\" غامضة، فقد تكون سمة اتصال أو معاملًا",
+        "ERROR_AMBIGUOUS_PARENT_GROUP"       : "لا يمكن تحديد group و parentIdentifier معًا",
+        "ERROR_ARRAY_REQUIRED"               : "يجب أن يحتوي الملف المقدم على قائمة اتصالات",
+        "ERROR_DETECTED_INVALID_TYPE"        : "نوع ملف غير مدعوم. يرجى التأكد من أن الملف بتنسيق CSV أو JSON أو YAML صالح.",
+        "ERROR_DUPLICATE_CONNECTION_IN_FILE" : "الاتصال \"{NAME}\" في \"{PATH}\" مكرر في ملف الاستيراد",
+        "ERROR_DUPLICATE_CSV_HEADER"         : "ترويسة CSV مكررة: {HEADER}",
+        "ERROR_EMPTY_FILE"                   : "الملف المقدم فارغ",
+        "ERROR_INVALID_CSV_HEADER"           : "ترويسة CSV \"{HEADER}\" غير صالحة، فهي ليست سمة ولا معاملًا",
+        "ERROR_INVALID_MIME_TYPE"            : "نوع ملف غير مدعوم: \"{TYPE}\"",
+        "ERROR_INVALID_GROUP"                : "لم يتم العثور على مجموعة تطابق \"{GROUP}\"",
+        "ERROR_INVALID_GROUP_IDENTIFIER"     : "لم يتم العثور على مجموعة اتصالات بالمعرّف \"{IDENTIFIER}\"",
+        "ERROR_INVALID_GROUP_TYPE"           : "مجموعة غير صالحة، يجب أن تكون نصًا.",
+        "ERROR_INVALID_PROTOCOL"             : "بروتوكول غير صالح \"{PROTOCOL}\"",
+        "ERROR_INVALID_USER_GROUPS_TYPE"     : "مجموعات مستخدمين غير صالحة، يجب أن تكون قائمة بمعرّفات مجموعات المستخدمين.",
+        "ERROR_INVALID_USERS_TYPE"           : "مستخدمون غير صالحين، يجب أن تكون قائمة بمعرّفات المستخدمين.",
+        "ERROR_NO_FILE_SUPPLIED"             : "يرجى اختيار ملف للاستيراد",
+        "ERROR_PARSE_FAILURE_CSV"            : "يرجى التأكد من أن الملف بتنسيق CSV صالح. فشل التحليل بالخطأ \"{ERROR}\". ",
+        "ERROR_PARSE_FAILURE_JSON"           : "يرجى التأكد من أن الملف بتنسيق JSON صالح. فشل التحليل بالخطأ \"{ERROR}\". ",
+        "ERROR_PARSE_FAILURE_YAML"           : "يرجى التأكد من أن الملف بتنسيق YAML صالح. فشل التحليل بالخطأ \"{ERROR}\". ",
+        "ERROR_REJECT_UPDATE_CONNECTION"     : "الاتصال \"{NAME}\" موجود مسبقًا في \"{PATH}\"",
+        "ERROR_REQUIRED_NAME_CONNECTION"     : "اسم الاتصال مطلوب",
+        "ERROR_REQUIRED_PROTOCOL_CONNECTION" : "بروتوكول الاتصال مطلوب",
+        "ERROR_REQUIRED_NAME_FILE"           : "لم يتم العثور على اسم اتصال في الملف المقدم",
+        "ERROR_REQUIRED_PROTOCOL_FILE"       : "لم يتم العثور على بروتوكول اتصال في الملف المقدم",
+
+        "FIELD_HEADER_CREATE_MISSING_GROUPS"    : "إنشاء المجموعات تلقائيًا",
+        "FIELD_HEADER_EXISTING_CONNECTION_MODE" : "استبدال/تحديث الاتصالات الموجودة",
+        "FIELD_HEADER_EXISTING_PERMISSION_MODE" : "إعادة تعيين الصلاحيات",
+
+        "HELP_CSV_DESCRIPTION"              : "يحتوي ملف CSV لاستيراد الاتصالات على سجل اتصال واحد في كل صف. يحدد كل عمود حقلًا من حقول الاتصال. يجب تحديد اسم الاتصال وبروتوكوله على الأقل.",
+        "HELP_CSV_MORE_DETAILS"             : "تحدد ترويسة CSV حقل الاتصال لكل عمود. يمكن تحديد معرّف مجموعة الاتصالات التي سيُستورد إليها الاتصال مباشرةً باستخدام \"parentIdentifier\"، أو تحديد مسار المجموعة الأم باستخدام \"group\" كما هو موضح أدناه. في معظم الحالات لن يكون هناك تعارض بين الحقول، ولكن يمكن عند الحاجة إضافة اللاحقة \" (attribute)\" أو \" (parameter)\" لإزالة الالتباس. يجب الفصل بين معرّفات المستخدمين أو مجموعات المستخدمين بفاصلة منقوطة.¹",
+        "HELP_FILE_TYPE_DESCRIPTION"        : "يدعم استيراد الاتصالات ثلاثة أنواع من الملفات: CSV و JSON و YAML. يمكن تحديد البيانات نفسها بأي من هذه الأنواع، ويجب أن تتضمن اسم الاتصال وبروتوكوله. ويمكن اختياريًا تحديد موقع مجموعة الاتصالات، وقائمة بالمستخدمين و/أو مجموعات المستخدمين الذين يُمنحون حق الوصول، ومعاملات الاتصال، وسماته. سيتم إنشاء أي مستخدمين أو مجموعات مستخدمين غير موجودين في مصدر البيانات الحالي تلقائيًا. لاحظ أن صلاحيات الاتصالات الموجودة لن تُزال عند تحديث الاتصالات ما لم يتم تحديد \"إعادة تعيين الصلاحيات\".",
+        "HELP_FILE_TYPE_HEADER"             : "أنواع الملفات",
+        "HELP_JSON_DESCRIPTION"             : "ملف JSON لاستيراد الاتصالات هو قائمة من كائنات الاتصال. يجب تحديد اسم الاتصال وبروتوكوله على الأقل في كل كائن.",
+        "HELP_JSON_MORE_DETAILS"            : "يمكن تحديد معرّف مجموعة الاتصالات التي سيُستورد إليها الاتصال مباشرةً بالحقل \"parentIdentifier\"، أو تحديد مسار المجموعة الأم بالحقل \"group\" كما هو موضح أدناه. ويمكن لكل اتصال تحديد قائمة بمعرّفات المستخدمين ومجموعات المستخدمين الذين يُمنحون حق الوصول.",
+        "HELP_CREATE_MISSING_GROUPS"        : "إنشاء أي مجموعات اتصالات محددة في ملف الاستيراد وغير موجودة بعد تلقائيًا. إذا لم يُحدد هذا الخيار، فسيُعد أي اتصال يشير إلى مجموعة أم غير موجودة خطأً ولن يتم استيراده. إذا فشل الإنشاء في منتصف العملية، تبقى المجموعات التي أُنشئت، وستُستخدم مجددًا عند إعادة الاستيراد.",
+        "HELP_EXISTING_CONNECTION_MODE"     : "استبدال/تحديث الاتصالات الموجودة بالكامل إذا تطابق اسمها ومجموعتها الأم مع القيم الموجودة في الملف المقدم. إذا لم يُحدد هذا الخيار، فستُعد محاولة استيراد اتصال له اسم ومجموعة أم اتصال موجود خطأً.",
+        "HELP_EXISTING_PERMISSION_MODE"     : "إعادة تعيين الصلاحيات الممنوحة لجميع الاتصالات في الملف المقدم بالكامل إلى الصلاحيات المحددة في ذلك الملف. إذا لم تُحدد أي صلاحيات، فستُلغى جميع صلاحيات الاتصال ذات الصلة. إذا لم يُحدد هذا الخيار، فستُحفظ الصلاحيات الموجودة وتُضاف إليها الصلاحيات المحددة في الملف.",
+        "HELP_SEMICOLON_FOOTNOTE"           : "يمكن تهريب الفاصلة المنقوطة بشرطة مائلة عكسية عند الحاجة، مثل \"first\\\\;last\"",
+        "HELP_UPLOAD_DROP_TITLE"            : "أفلت ملفًا هنا",
+        "HELP_UPLOAD_FILE_TYPES"            : "CSV أو JSON أو YAML",
+        "HELP_YAML_DESCRIPTION"             : "ملف YAML لاستيراد الاتصالات هو قائمة من كائنات الاتصال بنفس بنية تنسيق JSON تمامًا.",
+
+        "INFO_CONNECTIONS_IMPORTED_SUCCESS" : "{NUMBER, plural, one{تم استيراد اتصال واحد} two{تم استيراد اتصالين} few{تم استيراد # اتصالات} many{تم استيراد # اتصالًا} other{تم استيراد # اتصال}} بنجاح.",
+
+        "SECTION_HEADER_CONNECTION_IMPORT"           : "استيراد الاتصالات",
+        "SECTION_HEADER_HELP_CONNECTION_IMPORT_FILE" : "تنسيق ملف استيراد الاتصالات",
+        "SECTION_HEADER_CSV"                         : "تنسيق CSV",
+        "SECTION_HEADER_JSON"                        : "تنسيق JSON",
+        "SECTION_HEADER_YAML"                        : "تنسيق YAML",
+
+        "TABLE_HEADER_ERRORS"     : "الأخطاء",
+        "TABLE_HEADER_GROUP"      : "المجموعة",
+        "TABLE_HEADER_NAME"       : "الاسم",
+        "TABLE_HEADER_PROTOCOL"   : "البروتوكول",
+        "TABLE_HEADER_ROW_NUMBER" : "رقم الصف"
+    },
+
+    "DATA_SOURCE_DEFAULT" : {
+        "NAME" : "الافتراضي (XML)"
+    },
+
+    "FORM" : {
+
+        "FIELD_PLACEHOLDER_DATE" : "YYYY-MM-DD",
+        "FIELD_PLACEHOLDER_TIME" : "HH:MM:SS",
+
+        "HELP_SHOW_PASSWORD" : "انقر لإظهار كلمة المرور",
+        "HELP_HIDE_PASSWORD" : "انقر لإخفاء كلمة المرور"
+
+    },
+
+    "HOME" : {
+
+        "FIELD_PLACEHOLDER_FILTER" : "@:APP.FIELD_PLACEHOLDER_FILTER",
+
+        "INFO_ACTIVE_USER_COUNT" : "@:APP.INFO_ACTIVE_USER_COUNT",
+        "INFO_AVAILABLE_CONNECTIONS"   : "{AVAILABLE} من {TOTAL} {TOTAL, plural, one{اتصال} two{اتصالين} few{اتصالات} other{اتصال}} متاحة",
+
+        "INFO_NO_RECENT_CONNECTIONS" : "لا توجد اتصالات حديثة.",
+
+        "PASSWORD_CHANGED" : "تم تغيير كلمة المرور.",
+
+        "SECTION_HEADER_ALL_CONNECTIONS"    : "جميع الاتصالات",
+        "SECTION_HEADER_RECENT_CONNECTIONS" : "الاتصالات الحديثة"
+
+    },
+
+    "LIST" : {
+
+        "TEXT_ANONYMOUS_USER" : "مجهول"
+
+    },
+
+    "LOGIN": {
+
+        "ACTION_ACKNOWLEDGE" : "@:APP.ACTION_ACKNOWLEDGE",
+        "ACTION_CONTINUE"    : "@:APP.ACTION_CONTINUE",
+        "ACTION_LOGIN"       : "@:APP.ACTION_LOGIN",
+
+        "DIALOG_HEADER_ERROR" : "@:APP.DIALOG_HEADER_ERROR",
+
+        "ERROR_INVALID_LOGIN" : "بيانات الدخول غير صحيحة",
+
+        "FIELD_HEADER_USERNAME" : "اسم المستخدم",
+        "FIELD_HEADER_PASSWORD" : "كلمة المرور"
+
+    },
+
+    "MANAGE_CONNECTION" : {
+
+        "DIALOG_HEADER_CONFIRM_DELETE" : "حذف الاتصال",
+
+        "FIELD_HEADER_LOCATION" : "الموقع:",
+        "FIELD_HEADER_NAME"     : "الاسم:",
+        "FIELD_HEADER_PROTOCOL" : "البروتوكول:",
+
+        "INFO_CONNECTION_ACTIVE_NOW"       : "نشط الآن",
+        "INFO_CONNECTION_NOT_USED"         : "لم يُستخدم هذا الاتصال بعد.",
+
+        "SECTION_HEADER_EDIT_CONNECTION" : "تعديل الاتصال",
+        "SECTION_HEADER_HISTORY"         : "سجل الاستخدام",
+        "SECTION_HEADER_PARAMETERS"      : "المعاملات",
+
+        "TABLE_HEADER_HISTORY_USERNAME"   : "اسم المستخدم",
+        "TABLE_HEADER_HISTORY_START"      : "وقت البدء",
+        "TABLE_HEADER_HISTORY_DURATION"   : "المدة",
+        "TABLE_HEADER_HISTORY_REMOTEHOST" : "المضيف البعيد",
+
+        "TEXT_CONFIRM_DELETE"   : "لا يمكن استعادة الاتصالات بعد حذفها. هل أنت متأكد من رغبتك في حذف هذا الاتصال؟"
+
+    },
+
+    "MANAGE_CONNECTION_GROUP" : {
+
+        "DIALOG_HEADER_CONFIRM_DELETE" : "حذف مجموعة الاتصالات",
+
+        "FIELD_HEADER_LOCATION" : "الموقع:",
+        "FIELD_HEADER_NAME"     : "الاسم:",
+        "FIELD_HEADER_TYPE"     : "النوع:",
+
+        "NAME_TYPE_BALANCING"       : "موازنة الحمل",
+        "NAME_TYPE_ORGANIZATIONAL"  : "تنظيمية",
+
+        "SECTION_HEADER_EDIT_CONNECTION_GROUP" : "تعديل مجموعة الاتصالات",
+
+        "TEXT_CONFIRM_DELETE" : "لا يمكن استعادة مجموعات الاتصالات بعد حذفها. هل أنت متأكد من رغبتك في حذف مجموعة الاتصالات هذه؟"
+
+    },
+
+    "MANAGE_SHARING_PROFILE" : {
+
+        "DIALOG_HEADER_CONFIRM_DELETE" : "حذف ملف المشاركة",
+
+        "FIELD_HEADER_NAME"               : "الاسم:",
+        "FIELD_HEADER_PRIMARY_CONNECTION" : "الاتصال الأساسي:",
+
+        "SECTION_HEADER_EDIT_SHARING_PROFILE" : "تعديل ملف المشاركة",
+        "SECTION_HEADER_PARAMETERS"           : "المعاملات",
+
+        "TEXT_CONFIRM_DELETE" : "لا يمكن استعادة ملفات المشاركة بعد حذفها. هل أنت متأكد من رغبتك في حذف ملف المشاركة هذا؟"
+
+    },
+
+    "MANAGE_USER" : {
+
+        "DIALOG_HEADER_CONFIRM_DELETE" : "حذف المستخدم",
+
+        "FIELD_HEADER_ADMINISTER_SYSTEM"             : "إدارة النظام:",
+        "FIELD_HEADER_AUDIT_SYSTEM"                  : "تدقيق النظام:",
+        "FIELD_HEADER_CHANGE_OWN_PASSWORD"           : "تغيير كلمة المرور الخاصة:",
+        "FIELD_HEADER_CREATE_NEW_USERS"              : "إنشاء مستخدمين جدد:",
+        "FIELD_HEADER_CREATE_NEW_USER_GROUPS"        : "إنشاء مجموعات مستخدمين جديدة:",
+        "FIELD_HEADER_CREATE_NEW_CONNECTIONS"        : "إنشاء اتصالات جديدة:",
+        "FIELD_HEADER_CREATE_NEW_CONNECTION_GROUPS"  : "إنشاء مجموعات اتصالات جديدة:",
+        "FIELD_HEADER_CREATE_NEW_SHARING_PROFILES"   : "إنشاء ملفات مشاركة جديدة:",
+        "FIELD_HEADER_USER_DISABLED"                 : "تعطيل تسجيل الدخول:",
+        "FIELD_HEADER_USERNAME"                      : "اسم المستخدم:",
+
+        "HELP_NO_USER_GROUPS" : "لا ينتمي هذا المستخدم حاليًا إلى أي مجموعة. وسّع هذا القسم لإضافة مجموعات.",
+
+        "INFO_READ_ONLY"                : "عذرًا، لا يمكن تعديل حساب المستخدم هذا.",
+        "INFO_NO_USER_GROUPS_AVAILABLE" : "لا توجد مجموعات متاحة.",
+
+        "SECTION_HEADER_ALL_CONNECTIONS"     : "جميع الاتصالات",
+        "SECTION_HEADER_CONNECTIONS"         : "الاتصالات",
+        "SECTION_HEADER_CURRENT_CONNECTIONS" : "الاتصالات الحالية",
+        "SECTION_HEADER_EDIT_USER"           : "تعديل المستخدم",
+        "SECTION_HEADER_PERMISSIONS"         : "الصلاحيات",
+        "SECTION_HEADER_USER_GROUPS"         : "المجموعات",
+
+        "TEXT_CONFIRM_DELETE" : "لا يمكن استعادة المستخدمين بعد حذفهم. هل أنت متأكد من رغبتك في حذف هذا المستخدم؟"
+
+    },
+
+    "MANAGE_USER_GROUP" : {
+
+        "DIALOG_HEADER_CONFIRM_DELETE" : "حذف المجموعة",
+
+        "FIELD_HEADER_USER_GROUP_DISABLED"           : "معطّلة:",
+        "FIELD_HEADER_USER_GROUP_NAME"               : "اسم المجموعة:",
+
+        "HELP_NO_USER_GROUPS"        : "لا تنتمي هذه المجموعة حاليًا إلى أي مجموعة. وسّع هذا القسم لإضافة مجموعات.",
+        "HELP_NO_MEMBER_USER_GROUPS" : "لا تحتوي هذه المجموعة حاليًا على أي مجموعات. وسّع هذا القسم لإضافة مجموعات.",
+        "HELP_NO_MEMBER_USERS"       : "لا تحتوي هذه المجموعة حاليًا على أي مستخدمين. وسّع هذا القسم لإضافة مستخدمين.",
+
+        "INFO_READ_ONLY"                : "عذرًا، لا يمكن تعديل هذه المجموعة.",
+        "INFO_NO_USERS_AVAILABLE"       : "لا يوجد مستخدمون متاحون.",
+
+        "SECTION_HEADER_EDIT_USER_GROUP"     : "تعديل المجموعة",
+        "SECTION_HEADER_MEMBER_USERS"        : "المستخدمون الأعضاء",
+        "SECTION_HEADER_MEMBER_USER_GROUPS"  : "المجموعات الأعضاء",
+        "SECTION_HEADER_USER_GROUPS"         : "المجموعات الأم",
+
+        "TEXT_CONFIRM_DELETE" : "لا يمكن استعادة المجموعات بعد حذفها. هل أنت متأكد من رغبتك في حذف هذه المجموعة؟"
+
+    },
+
+    "PLAYER" : {
+
+        "ACTION_CLOSE"        : "إغلاق",
+        "ACTION_SHOW_KEY_LOG" : "سجل ضغطات المفاتيح",
+
+        "INFO_FRAME_EVENTS_LEGEND" : "النشاط على الشاشة",
+        "INFO_KEY_EVENTS_LEGEND"   : "نشاط لوحة المفاتيح",
+        "INFO_LOADING_RECORDING"   : "جارٍ تحميل التسجيل. يرجى الانتظار...",
+        "INFO_NO_KEY_LOG"          : "سجل ضغطات المفاتيح غير متاح",
+        "INFO_NUMBER_OF_RESULTS"   : "{RESULTS, plural, =0{لا توجد نتائج} one{نتيجة واحدة} two{نتيجتان} few{# نتائج} many{# نتيجة} other{# نتيجة}}",
+        "INFO_SEEK_IN_PROGRESS"    : "جارٍ الانتقال إلى الموضع المطلوب. يرجى الانتظار..."
+
+    },
+
+    "PROTOCOL_SSH" : {
+
+        "FIELD_HEADER_COLOR_SCHEME" : "نظام الألوان:",
+        "FIELD_HEADER_FONT_NAME"     : "اسم الخط:",
+        "FIELD_HEADER_FONT_SIZE"     : "حجم الخط:",
+
+        "FIELD_OPTION_COLOR_SCHEME_BLACK_WHITE" : "أسود على أبيض",
+        "FIELD_OPTION_COLOR_SCHEME_GRAY_BLACK"  : "رمادي على أسود",
+        "FIELD_OPTION_COLOR_SCHEME_GREEN_BLACK" : "أخضر على أسود",
+        "FIELD_OPTION_COLOR_SCHEME_WHITE_BLACK" : "أبيض على أسود",
+
+        "SECTION_HEADER_AUTHENTICATION" : "المصادقة",
+        "SECTION_HEADER_BEHAVIOR"       : "سلوك الطرفية",
+        "SECTION_HEADER_CLIPBOARD"      : "الحافظة",
+        "SECTION_HEADER_DISPLAY"        : "العرض",
+        "SECTION_HEADER_NETWORK"        : "الشبكة",
+        "SECTION_HEADER_RECORDING"      : "تسجيل الشاشة",
+        "SECTION_HEADER_SESSION"        : "الجلسة / البيئة",
+        "SECTION_HEADER_TYPESCRIPT"     : "تسجيل الجلسة النصية",
+        "SECTION_HEADER_SFTP"           : "SFTP",
+        "SECTION_HEADER_WOL"            : "التشغيل عبر الشبكة (WoL)"
+
+    },
+
+    "SETTINGS" : {
+
+        "SECTION_HEADER_SETTINGS" : "الإعدادات"
+
+    },
+
+    "SETTINGS_CONNECTION_HISTORY" : {
+
+        "ACTION_DOWNLOAD"       : "@:APP.ACTION_DOWNLOAD",
+        "ACTION_SEARCH"         : "@:APP.ACTION_SEARCH",
+        "ACTION_VIEW_RECORDING" : "@:APP.ACTION_VIEW_RECORDING",
+
+        "FIELD_PLACEHOLDER_FILTER" : "@:APP.FIELD_PLACEHOLDER_FILTER",
+
+        "HELP_CONNECTION_HISTORY" : "تُعرض هنا سجلات الاتصالات السابقة، ويمكن فرزها بالنقر على عناوين الأعمدة. للبحث عن سجلات محددة، أدخل نص التصفية ثم انقر على \"بحث\". ستُعرض فقط السجلات المطابقة لنص التصفية.",
+
+        "INFO_NO_HISTORY"                  : "لا توجد سجلات مطابقة",
+
+        "TABLE_HEADER_SESSION_CONNECTION_NAME" : "اسم الاتصال",
+        "TABLE_HEADER_SESSION_DURATION"        : "المدة",
+        "TABLE_HEADER_SESSION_LOGS"            : "السجلات",
+        "TABLE_HEADER_SESSION_REMOTEHOST"      : "المضيف البعيد",
+        "TABLE_HEADER_SESSION_STARTDATE"       : "وقت البدء",
+        "TABLE_HEADER_SESSION_USERNAME"        : "اسم المستخدم",
+
+        "TEXT_HISTORY_DURATION" : "@:APP.TEXT_HISTORY_DURATION"
+
+    },
+
+    "SETTINGS_CONNECTIONS" : {
+
+        "ACTION_NEW_CONNECTION"       : "اتصال جديد",
+        "ACTION_NEW_CONNECTION_GROUP" : "مجموعة جديدة",
+        "ACTION_NEW_SHARING_PROFILE"  : "ملف مشاركة جديد",
+
+        "HELP_CONNECTIONS"   : "انقر على أي اتصال أدناه لإدارته. بحسب مستوى صلاحياتك، يمكن إضافة الاتصالات وحذفها وتغيير خصائصها (البروتوكول، اسم المضيف، المنفذ، إلخ).",
+
+        "SECTION_HEADER_CONNECTIONS"     : "الاتصالات"
+
+    },
+
+    "SETTINGS_PREFERENCES" : {
+
+        "ACTION_ACKNOWLEDGE"        : "@:APP.ACTION_ACKNOWLEDGE",
+        "ACTION_CANCEL"             : "@:APP.ACTION_CANCEL",
+        "ACTION_SAVE"               : "@:APP.ACTION_SAVE",
+        "ACTION_UPDATE_PASSWORD"    : "@:APP.ACTION_UPDATE_PASSWORD",
+
+        "DIALOG_HEADER_ERROR"    : "@:APP.DIALOG_HEADER_ERROR",
+
+        "ERROR_PASSWORD_BLANK"    : "@:APP.ERROR_PASSWORD_BLANK",
+        "ERROR_PASSWORD_MISMATCH" : "@:APP.ERROR_PASSWORD_MISMATCH",
+
+        "FIELD_HEADER_LANGUAGE"                  : "لغة العرض:",
+        "FIELD_HEADER_NUMBER_RECENT_CONNECTIONS" : "عدد الاتصالات الحديثة المعروضة:",
+        "FIELD_HEADER_PASSWORD"                  : "كلمة المرور:",
+        "FIELD_HEADER_PASSWORD_OLD"              : "كلمة المرور الحالية:",
+        "FIELD_HEADER_PASSWORD_NEW"              : "كلمة المرور الجديدة:",
+        "FIELD_HEADER_PASSWORD_NEW_AGAIN"        : "تأكيد كلمة المرور الجديدة:",
+        "FIELD_HEADER_SHOW_RECENT_CONNECTIONS"   : "عرض الاتصالات الحديثة:",
+        "FIELD_HEADER_TIMEZONE"                  : "المنطقة الزمنية:",
+        "FIELD_HEADER_USERNAME"                  : "اسم المستخدم:",
+
+        "HELP_APPEARANCE"           : "يمكنك هنا إظهار قسم \"الاتصالات الحديثة\" في الصفحة الرئيسية أو إخفاؤه، وتحديد عدد الاتصالات الحديثة المعروضة فيه.",
+        "HELP_DEFAULT_INPUT_METHOD" : "تحدد طريقة الإدخال الافتراضية كيفية استقبال Guacamole لأحداث لوحة المفاتيح. قد يلزم تغيير هذا الإعداد عند استخدام جهاز محمول أو عند الكتابة عبر محرر أسلوب الإدخال (IME). ويمكن تجاوز هذا الإعداد لكل اتصال على حدة من خلال قائمة Guacamole.",
+        "HELP_DEFAULT_MOUSE_MODE"   : "يحدد وضع محاكاة الفأرة الافتراضي كيفية تصرف الفأرة البعيدة عند اللمس في الاتصالات الجديدة. ويمكن تجاوز هذا الإعداد لكل اتصال على حدة من خلال قائمة Guacamole.",
+        "HELP_INPUT_METHOD_NONE"    : "@:CLIENT.HELP_INPUT_METHOD_NONE",
+        "HELP_INPUT_METHOD_OSK"     : "@:CLIENT.HELP_INPUT_METHOD_OSK",
+        "HELP_INPUT_METHOD_TEXT"    : "@:CLIENT.HELP_INPUT_METHOD_TEXT",
+        "HELP_LOCALE"               : "تتعلق الخيارات أدناه بالإعدادات المحلية للمستخدم، وتؤثر في طريقة عرض أجزاء مختلفة من الواجهة.",
+        "HELP_MOUSE_MODE_ABSOLUTE"  : "@:CLIENT.HELP_MOUSE_MODE_ABSOLUTE",
+        "HELP_MOUSE_MODE_RELATIVE"  : "@:CLIENT.HELP_MOUSE_MODE_RELATIVE",
+        "HELP_UPDATE_PASSWORD"      : "إذا أردت تغيير كلمة المرور، فأدخل كلمة المرور الحالية وكلمة المرور الجديدة أدناه، ثم انقر على \"تحديث كلمة المرور\". سيسري التغيير فورًا.",
+
+        "INFO_PASSWORD_CHANGED" : "تم تغيير كلمة المرور.",
+        "INFO_PREFERENCE_ATTRIBUTES_CHANGED" : "تم حفظ إعدادات المستخدم.",
+
+        "NAME_INPUT_METHOD_NONE" : "@:CLIENT.NAME_INPUT_METHOD_NONE",
+        "NAME_INPUT_METHOD_OSK"  : "@:CLIENT.NAME_INPUT_METHOD_OSK",
+        "NAME_INPUT_METHOD_TEXT" : "@:CLIENT.NAME_INPUT_METHOD_TEXT",
+
+        "SECTION_HEADER_APPEARANCE"           : "المظهر",
+        "SECTION_HEADER_DEFAULT_INPUT_METHOD" : "طريقة الإدخال الافتراضية",
+        "SECTION_HEADER_DEFAULT_MOUSE_MODE"   : "وضع محاكاة الفأرة الافتراضي",
+        "SECTION_HEADER_UPDATE_PASSWORD"      : "تغيير كلمة المرور"
+
+    },
+
+    "SETTINGS_USERS" : {
+
+        "ACTION_NEW_USER"      : "مستخدم جديد",
+
+        "HELP_USERS" : "انقر على أي مستخدم أدناه لإدارته. بحسب مستوى صلاحياتك، يمكن إضافة المستخدمين وحذفهم وتغيير كلمات مرورهم.",
+
+        "SECTION_HEADER_USERS"       : "المستخدمون",
+
+        "TABLE_HEADER_FULL_NAME"   : "الاسم الكامل",
+        "TABLE_HEADER_LAST_ACTIVE" : "آخر نشاط",
+        "TABLE_HEADER_ORGANIZATION" : "المؤسسة",
+        "TABLE_HEADER_USERNAME"    : "اسم المستخدم"
+
+    },
+
+    "SETTINGS_USER_GROUPS" : {
+
+        "ACTION_NEW_USER_GROUP" : "مجموعة جديدة",
+
+        "HELP_USER_GROUPS" : "انقر على أي مجموعة أدناه لإدارتها. بحسب مستوى صلاحياتك، يمكن إضافة المجموعات وحذفها وتغيير المستخدمين والمجموعات الأعضاء فيها.",
+
+        "SECTION_HEADER_USER_GROUPS" : "المجموعات",
+
+        "TABLE_HEADER_USER_GROUP_NAME" : "اسم المجموعة"
+
+    },
+
+    "SETTINGS_SESSIONS" : {
+
+        "ACTION_ACKNOWLEDGE" : "@:APP.ACTION_ACKNOWLEDGE",
+        "ACTION_CANCEL"      : "@:APP.ACTION_CANCEL",
+        "ACTION_DELETE"      : "إنهاء الجلسات",
+
+        "DIALOG_HEADER_CONFIRM_DELETE" : "إنهاء الجلسات",
+        "DIALOG_HEADER_ERROR"          : "@:APP.DIALOG_HEADER_ERROR",
+
+        "FIELD_PLACEHOLDER_FILTER" : "@:APP.FIELD_PLACEHOLDER_FILTER",
+
+        "FORMAT_STARTDATE" : "yyyy-MM-dd HH:mm:ss",
+
+        "HELP_SESSIONS" : "تعرض هذه الصفحة الاتصالات النشطة حاليًا. تعتمد الاتصالات المعروضة وإمكانية إنهائها على مستوى صلاحياتك. لإنهاء جلسة أو أكثر، حدد المربع بجوار تلك الجلسات ثم انقر على \"إنهاء الجلسات\". يؤدي إنهاء الجلسة إلى قطع اتصال المستخدم فورًا.",
+
+        "INFO_NO_SESSIONS" : "لا توجد جلسات نشطة",
+
+        "SECTION_HEADER_SESSIONS" : "الجلسات النشطة",
+
+        "TABLE_HEADER_SESSION_CONNECTION_NAME" : "اسم الاتصال",
+        "TABLE_HEADER_SESSION_REMOTEHOST"      : "المضيف البعيد",
+        "TABLE_HEADER_SESSION_STARTDATE"       : "نشطة منذ",
+        "TABLE_HEADER_SESSION_USERNAME"        : "اسم المستخدم",
+
+        "TEXT_CONFIRM_DELETE" : "هل أنت متأكد من رغبتك في إنهاء جميع الجلسات المحددة؟ سيُقطع اتصال المستخدمين بهذه الجلسات فورًا."
+
+    },
+
+    "USER_ATTRIBUTES" : {
+
+        "FIELD_HEADER_GUAC_EMAIL_ADDRESS"       : "البريد الإلكتروني:",
+        "FIELD_HEADER_GUAC_FULL_NAME"           : "الاسم الكامل:",
+        "FIELD_HEADER_GUAC_ORGANIZATION"        : "المؤسسة:",
+        "FIELD_HEADER_GUAC_ORGANIZATIONAL_ROLE" : "الدور:"
+
+    },
+
+    "USER_MENU" : {
+
+        "ACTION_LOGOUT"             : "@:APP.ACTION_LOGOUT",
+        "ACTION_MANAGE_CONNECTIONS" : "@:APP.ACTION_MANAGE_CONNECTIONS",
+        "ACTION_MANAGE_PREFERENCES" : "@:APP.ACTION_MANAGE_PREFERENCES",
+        "ACTION_MANAGE_SESSIONS"    : "@:APP.ACTION_MANAGE_SESSIONS",
+        "ACTION_MANAGE_SETTINGS"    : "@:APP.ACTION_MANAGE_SETTINGS",
+        "ACTION_MANAGE_USERS"       : "@:APP.ACTION_MANAGE_USERS",
+        "ACTION_MANAGE_USER_GROUPS" : "@:APP.ACTION_MANAGE_USER_GROUPS",
+        "ACTION_NAVIGATE_HOME"      : "@:APP.ACTION_NAVIGATE_HOME",
+        "ACTION_VIEW_HISTORY"       : "@:APP.ACTION_VIEW_HISTORY"
+
+    }
+
+}
