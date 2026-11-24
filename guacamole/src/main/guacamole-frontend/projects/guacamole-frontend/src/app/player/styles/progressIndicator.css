@@ -79,7 +79,7 @@ guac-player-progress-indicator .guac-player-progress-text {
 guac-player-progress-indicator .guac-player-progress-bar-container {
 
     position: absolute;
-    right: 0;
+    inset-inline-end: 0;
     top: 0;
     width: 50%;
     height: 100%;
@@ -95,7 +95,7 @@ guac-player-progress-indicator .guac-player-progress-bar-container.past-halfway:
 guac-player-progress-indicator .guac-player-progress-bar {
 
     position: absolute;
-    left: -64px;
+    inset-inline-start: -64px;
     top: 0;
     width: 128px;
     height: 128px;
@@ -106,7 +106,7 @@ guac-player-progress-indicator .guac-player-progress-bar {
 
     border: 12px solid #5AF;
     border-bottom-color: transparent;
-    border-right-color: transparent;
+    border-inline-end-color: transparent;
 
 }
 

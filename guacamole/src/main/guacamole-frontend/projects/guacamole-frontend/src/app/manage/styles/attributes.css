@@ -46,7 +46,7 @@
 }
 
 .attributes .form .fields .field-header {
-    padding-right: 1em;
+    padding-inline-end: 1em;
 }
 
 .attributes .form h3 {

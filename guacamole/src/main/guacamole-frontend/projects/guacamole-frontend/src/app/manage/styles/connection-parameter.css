@@ -27,8 +27,8 @@
 
 .connection-parameters .form .fields {
     display: table;
-    padding-left: .5em;
-    border-left: 3px solid rgba(0,0,0,0.125);
+    padding-inline-start: .5em;
+    border-inline-start: 3px solid rgba(0,0,0,0.125);
     width: 100%;
 }
 
@@ -49,7 +49,7 @@
 }
 
 .connection-parameters .form .fields .field-header {
-    padding-right: 1em;
+    padding-inline-end: 1em;
     width: 0;
     white-space: nowrap;
 }

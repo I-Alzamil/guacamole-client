@@ -18,9 +18,9 @@
  */
 
 .settings table.properties th {
-    text-align: left;
+    text-align: start;
     font-weight: normal;
-    padding-right: 1em;
+    padding-inline-end: 1em;
 }
 
 .settings .action-buttons {
@@ -58,7 +58,7 @@
 }
 
 .settings .toolbar .action-buttons {
-    margin-right: 0.25em;
+    margin-inline-end: 0.25em;
 }
 
 .settings .toolbar .filter {

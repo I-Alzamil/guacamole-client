@@ -136,11 +136,11 @@
 
 .menu,
 .menu.closed {
-    left: -480px;
+    inset-inline-start: -480px;
     opacity: 0;
 }
 
 .menu.open {
-    left: 0px;
+    inset-inline-start: 0px;
     opacity: 1;
 }

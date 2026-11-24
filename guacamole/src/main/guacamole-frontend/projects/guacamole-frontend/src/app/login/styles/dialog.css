@@ -34,7 +34,7 @@
 
     width: 100%;
     max-width: 3in;
-    text-align: left;
+    text-align: start;
     padding: 1em;
     font-size: 1.25em;
 
@@ -48,7 +48,7 @@
 }
 
 .login-ui .login-dialog .buttons {
-    text-align: right;
+    text-align: end;
     margin: 0;
     margin-top: 1em;
 }
@@ -75,7 +75,7 @@
 .login-ui .login-dialog .version .version-number {
 
     position: absolute;
-    right: 0;
+    inset-inline-end: 0;
     bottom: 0;
 
     padding: 0.25em 0.75em;
@@ -107,8 +107,8 @@
 }
 
 .login-ui.continuation .login-dialog {
-    border-right: none;
-    border-left: none;
+    border-inline-end: none;
+    border-inline-start: none;
     box-shadow: none;
     max-width: 6in;
 }

@@ -51,7 +51,7 @@ guac-player {
 
 guac-player .guac-player-display {
     top: 0;
-    left: 0;
+    inset-inline-start: 0;
     width: 100%;
     height: 100%;
 }
@@ -60,7 +60,7 @@ guac-player .guac-player-controls {
 
     position: absolute;
     padding-bottom: 0;
-    left: 0;
+    inset-inline-start: 0;
     bottom: 0;
     width: 100%;
 
@@ -122,7 +122,7 @@ guac-player .guac-player-controls {
     min-width: 0;
     padding: 0;
     position: fixed;
-    right: 0;
+    inset-inline-end: 0;
     top: 0;
 }
 
@@ -140,8 +140,8 @@ guac-player .guac-player-controls {
 }
 
 .guac-player-controls .guac-player-keys {
-    margin-left: auto;
-    padding-right: 0.5em;
+    margin-inline-start: auto;
+    padding-inline-end: 0.5em;
     cursor: pointer;
 }
 
@@ -152,8 +152,8 @@ guac-player .guac-player-controls {
 }
 
 .guac-player-controls .guac-player-keys {
-    margin-left: auto;
-    padding-right: 0.5em;
+    margin-inline-start: auto;
+    padding-inline-end: 0.5em;
     cursor: pointer;
 }
 
@@ -161,7 +161,7 @@ guac-player .guac-player-status {
 
     position: fixed;
     top: 0;
-    left: 0;
+    inset-inline-start: 0;
     width: 100%;
     height: 100%;
 

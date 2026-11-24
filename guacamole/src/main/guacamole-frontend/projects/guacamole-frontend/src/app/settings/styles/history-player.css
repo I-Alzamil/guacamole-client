@@ -51,7 +51,7 @@
 
     position: absolute;
     top: 0;
-    left: 0;
+    inset-inline-start: 0;
     width: 100vw;
     height: 100vh;
     padding: 0;
@@ -62,7 +62,7 @@
 .settings.connectionHistoryPlayer guac-player {
     position: absolute;
     top: 0;
-    left: 0;
+    inset-inline-start: 0;
     width: 100%;
     height: 100%;
 }
@@ -138,12 +138,12 @@
     flex-direction: column;
     align-items: end;
     bottom: 65px;
-    right: 10px;
+    inset-inline-end: 10px;
     z-index: 100;
     background-color: rgba(0, 0, 0, 0.85);
     padding-top: 3px;
     padding-bottom: 3px;
-    padding-left: 6px;
+    padding-inline-start: 6px;
     border-radius: 5px;
     opacity: 0;
     -webkit-transition: opacity 0.1s linear 0.1s;
@@ -162,8 +162,8 @@
     content: '';
     width: 25px;
     height: 10px;
-    margin-left: 3px;
-    margin-right: 10px;
+    margin-inline-start: 3px;
+    margin-inline-end: 10px;
     border-radius: 3px;
 }
 

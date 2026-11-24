@@ -48,7 +48,7 @@
 
 .share-menu .menu-dropdown .menu-title {
 
-    padding-left: 2em;
+    padding-inline-start: 2em;
 
     background-repeat: no-repeat;
     background-size: 1em;

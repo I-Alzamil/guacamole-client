@@ -62,6 +62,7 @@
 @import "app/index/styles/loading.css";
 @import "app/index/styles/logged-out.css";
 @import "app/index/styles/other-connections.css";
+@import "app/index/styles/rtl.css";
 @import "app/index/styles/sorted-tables.css";
 @import "app/index/styles/status.css";
 @import "app/index/styles/ui.css";

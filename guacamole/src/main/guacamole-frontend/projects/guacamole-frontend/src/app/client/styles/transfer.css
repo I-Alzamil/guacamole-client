@@ -29,7 +29,7 @@
 
 .transfer .text {
     display: table-cell;
-    text-align: right;
+    text-align: end;
     padding: 0.25em
 }
 
@@ -60,7 +60,7 @@
 
     position: absolute;
     top: 0;
-    left: 0;
+    inset-inline-start: 0;
     bottom: 0;
     opacity: 0.25;
 
@@ -93,7 +93,7 @@
     background: #A3D655;
     position: absolute;
     top: 0;
-    left: 0;
+    inset-inline-start: 0;
     height: 100%;
     width: 0;
 }

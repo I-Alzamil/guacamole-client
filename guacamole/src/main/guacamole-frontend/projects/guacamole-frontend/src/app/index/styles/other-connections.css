@@ -21,7 +21,7 @@
 
     display: none;
     position: fixed;
-    right: 0;
+    inset-inline-end: 0;
     bottom: 0;
 
     border: 1px solid rgba(255, 255, 255, 0.25);
@@ -46,7 +46,7 @@
 #other-connections .client-panel-handle {
 
     position: absolute;
-    left: 0;
+    inset-inline-start: 0;
     bottom: 0;
     height: 100%;
     width: 16px;
@@ -71,11 +71,11 @@
 
 #other-connections .client-panel-connection-list {
 
-    text-align: right;
+    text-align: end;
 
     margin: 0;
     padding: 0;
-    padding-left: 16px;
+    padding-inline-start: 16px;
 
     overflow-x: auto;
     overflow-y: hidden;
@@ -109,7 +109,7 @@
 
     position: absolute;
     top: 0;
-    left: 0;
+    inset-inline-start: 0;
     height: 100%;
     width: 100%;
     z-index: 1;
@@ -133,7 +133,7 @@
 
     position: absolute;
     top: 0;
-    right: 0;
+    inset-inline-end: 0;
     z-index: 2;
 
     margin: 0;
@@ -181,12 +181,12 @@
 
     position: absolute;
     padding: 0.25em 0.5em;
-    left: 0;
-    right: 0;
+    inset-inline-start: 0;
+    inset-inline-end: 0;
     bottom: 0;
     z-index: 2;
 
-    text-align: left;
+    text-align: start;
     color: white;
     background: rgba(0, 0, 0, 0.5);
     font-size: 0.75em;

@@ -19,8 +19,8 @@
 
 .preferences .form .fields {
     display: table;
-    padding-left: 0.5em;
-    border-left: 3px solid rgba(0,0,0,0.125);
+    padding-inline-start: 0.5em;
+    border-inline-start: 3px solid rgba(0,0,0,0.125);
 }
 
 .preferences .form .fields guac-form-field {
@@ -39,5 +39,5 @@
 }
 
 .preferences .form .fields .field-header {
-    padding-right: 1em;
+    padding-inline-end: 1em;
 }

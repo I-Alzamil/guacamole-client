@@ -63,7 +63,7 @@
     background: #A3D655;
     position: absolute;
     top: 0;
-    left: 0;
+    inset-inline-start: 0;
     height: 100%;
     width: 0;
     box-shadow: inset  1px  1px 0 rgba(255, 255, 255, 0.5),
@@ -121,14 +121,14 @@
 
 .notification .parameters .fields .field-header,
 .notification .parameters .fields .form-field {
-    text-align: left;
+    text-align: start;
     display: table-cell;
     padding: .125em;
     vertical-align: top;
 }
 
 .notification .parameters .fields .field-header {
-    padding-right: 1em;
+    padding-inline-end: 1em;
 }
 
 .notification .parameters .fields .field-header {

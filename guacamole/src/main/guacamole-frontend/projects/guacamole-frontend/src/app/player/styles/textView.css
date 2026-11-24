@@ -28,7 +28,7 @@
 .text-batches .text-batch {
 
     margin-bottom: 1em;
-    margin-left: 0.5em;
+    margin-inline-start: 0.5em;
     cursor: pointer;
 
 }
@@ -70,7 +70,7 @@
     cursor: pointer;
     height: 22px;
     width: 22px;
-    margin-right: 0.25em;
+    margin-inline-end: 0.25em;
 
 }
 

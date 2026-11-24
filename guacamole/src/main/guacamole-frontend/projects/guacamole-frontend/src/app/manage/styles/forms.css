@@ -18,9 +18,9 @@
  */
 
 .manage table.properties th {
-    text-align: left;
+    text-align: start;
     font-weight: normal;
-    padding-right: 1em;
+    padding-inline-end: 1em;
 }
 
 .manage .action-buttons {

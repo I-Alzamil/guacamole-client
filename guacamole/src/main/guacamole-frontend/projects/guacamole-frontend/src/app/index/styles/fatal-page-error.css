@@ -26,13 +26,13 @@
     width: 100%;
     max-width: 5in;
     padding: 1em;
-    text-align: left;
+    text-align: start;
 }
 
 .fatal-page-error h1 {
     text-transform: uppercase;
     padding: 0;
-    padding-right: 1em;
+    padding-inline-end: 1em;
 }
 
 .fatal-page-error h1::before {

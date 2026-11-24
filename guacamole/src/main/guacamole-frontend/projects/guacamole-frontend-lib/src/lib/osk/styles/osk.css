@@ -29,7 +29,7 @@
     padding: 0;
     cursor: default;
 
-    text-align: left;
+    text-align: start;
     vertical-align: middle;
 }
 
@@ -48,8 +48,8 @@
 .guac-keyboard .guac-keyboard-key {
 
     position: absolute;
-    left:   0;
-    right:  0;
+    inset-inline-start:   0;
+    inset-inline-end:  0;
     top:    0;
     bottom: 0;
 
@@ -96,8 +96,8 @@
 .guac-keyboard .guac-keyboard-key-super,
 .guac-keyboard .guac-keyboard-key-lshift,
 .guac-keyboard .guac-keyboard-key-rshift {
-    text-align: left;
-    padding-left: 0.75em;
+    text-align: start;
+    padding-inline-start: 0.75em;
 }
 
 /* Active shift */

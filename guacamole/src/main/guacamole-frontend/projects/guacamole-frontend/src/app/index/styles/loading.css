@@ -25,7 +25,7 @@
 .view.loading {
     position: fixed;
     top: 0;
-    left: 0;
+    inset-inline-start: 0;
     width: 100%;
     height: 100%;
 }
@@ -43,11 +43,11 @@
     /* Dictated by size of image */
     width: 96px;
     height: 96px;
-    margin-left: -48px;
+    margin-inline-start: -48px;
     margin-top: -48px;
 
     top: 50%;
-    left: 50%;
+    inset-inline-start: 50%;
 
     background-image: url('images/cog.svg');
     background-size: 96px 96px;

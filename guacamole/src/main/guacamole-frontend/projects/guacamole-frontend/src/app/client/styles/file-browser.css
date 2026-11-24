@@ -20,7 +20,7 @@
 /* Hide directory contents by default */
 
 .file-browser .directory > .children {
-    padding-left: 1em;
+    padding-inline-start: 1em;
     display: none;
 }
 

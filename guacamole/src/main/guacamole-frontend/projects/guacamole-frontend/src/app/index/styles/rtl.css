@@ -1,0 +1,115 @@
+/*
+ * Licensed to the Apache Software Foundation (ASF) under one
+ * or more contributor license agreements.  See the NOTICE file
+ * distributed with this work for additional information
+ * regarding copyright ownership.  The ASF licenses this file
+ * to you under the Apache License, Version 2.0 (the
+ * "License"); you may not use this file except in compliance
+ * with the License.  You may obtain a copy of the License at
+ *
+ *   http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing,
+ * software distributed under the License is distributed on an
+ * "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+ * KIND, either express or implied.  See the License for the
+ * specific language governing permissions and limitations
+ * under the License.
+ */
+
+/*
+ * Right-to-left overrides. Nearly all directional layout is expressed using
+ * CSS logical properties (inset-inline-start, margin-inline-end, etc.) and
+ * thus mirrors automatically. The rules below cover the remaining cases which
+ * have no logical equivalent: background image offsets and directional
+ * arrow icons.
+ */
+
+[dir="rtl"] :is(.button, button):is(.logout, .reconnect, .manage, .back, .home, .change-password)::before,
+[dir="rtl"] a.button:is(.add-user, .add-user-group, .add-connection,
+        .add-connection-group, .import-connections)::before {
+    background-position: right 0.5em center;
+}
+
+[dir="rtl"] .user-menu .menu-dropdown .menu-title,
+[dir="rtl"] .share-menu .menu-dropdown .menu-title {
+    background-position: right 0.5em center;
+}
+
+[dir="rtl"] .user-menu .menu-dropdown .menu-contents li a,
+[dir="rtl"] .client .user-menu .menu-contents li a.disconnect {
+    background-position: right 0.75em center;
+}
+
+[dir="rtl"] .filter .search-string {
+    background-position: right 0.25em center;
+}
+
+[dir="rtl"] #guac-menu #devices .device {
+    background-position: right 1em center;
+}
+
+[dir="rtl"] table.sorted th.sort-primary:after {
+    background-position: left center;
+}
+
+[dir="rtl"] #other-connections .client-panel-handle {
+    background-image: url('images/arrows/left.svg');
+}
+
+[dir="rtl"] #other-connections .client-panel.hidden .client-panel-handle {
+    background-image: url('images/arrows/right.svg');
+}
+
+/*
+ * Remote displays, on-screen keyboards, and playback timelines represent
+ * physical layouts and must never be mirrored, regardless of UI language.
+ */
+.display, .main .display,
+.osk, .player .guac-player-seek, .text-input {
+    direction: ltr;
+}
+
+/*
+ * Strings without a translation fall back to English. Within right-to-left
+ * pages, blocks of text determine their own direction from their content,
+ * such that untranslated English text (and its punctuation) is laid out
+ * correctly rather than mirrored.
+ */
+[dir="rtl"] p, [dir="rtl"] h2, [dir="rtl"] h3, [dir="rtl"] th,
+[dir="rtl"] td, [dir="rtl"] label, [dir="rtl"] .caption {
+    unicode-bidi: plaintext;
+}
+
+/*
+ * With "plaintext", "start" and "end" alignment follow the direction of the
+ * text itself rather than the page, aligning English text to the left.
+ * Within right-to-left pages, text is instead aligned using the equivalent
+ * physical alignment ("match-parent" does not help, as browsers resolve it
+ * to the inherited "start").
+ */
+[dir="rtl"] body,
+[dir="rtl"] :is(
+        .form table.fields th,
+        .settings table.properties th,
+        .manage table.properties th,
+        .preferences .mouse-mode .caption,
+        .list-item,
+        .fatal-page-error,
+        .login-ui .login-dialog,
+        .global-status-modal .notification,
+        .notification .parameters .fields .form-field,
+        .client-zoom .client-zoom-autofit),
+[dir="rtl"] #other-connections .client-panel-connection .name {
+    text-align: right;
+}
+
+[dir="rtl"] :is(.login-ui .login-dialog .buttons, .transfer .text),
+[dir="rtl"] #other-connections .client-panel-connection-list {
+    text-align: left;
+}
+
+/* Areas which are never mirrored (see above) keep left alignment */
+[dir="rtl"] :is(.display, .osk, .player .guac-player-seek, .text-input) {
+    text-align: left;
+}

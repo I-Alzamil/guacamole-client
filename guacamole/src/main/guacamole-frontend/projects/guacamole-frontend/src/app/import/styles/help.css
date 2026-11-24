@@ -37,7 +37,7 @@
 
 .import.help p, .import.help pre {
 
-    margin-left: 1em;
+    margin-inline-start: 1em;
 
 }
 
@@ -54,6 +54,6 @@
     border-top: 1px solid gray;
     padding-top: 1em;
     width: fit-content;
-    margin-left: 1em;
+    margin-inline-start: 1em;
 
 }

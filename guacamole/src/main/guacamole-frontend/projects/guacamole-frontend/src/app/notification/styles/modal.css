@@ -29,7 +29,7 @@ guac-modal {
     height: 100%;
     width: 100%;
     position: fixed;
-    left: 0;
+    inset-inline-start: 0;
     top: 0;
     z-index: 10;
     overflow: hidden;
