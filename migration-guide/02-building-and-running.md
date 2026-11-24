@@ -82,7 +82,7 @@ Run the WAR in the official image with your `GUACAMOLE_HOME`:
 ```sh
 podman run -d -p 8080:8080 -e GUACD_HOSTNAME=<guacd-host> \
   -e GUACAMOLE_HOME=/guac-home -v ./guac-home:/guac-home:ro,Z \
-  -v ./guacamole/target/guacamole-1.6.1.war:/opt/guacamole/webapp/guacamole.war:ro,Z \
+  -v PATH_TO_BUILT_WAR/guacamole-1.6.1.war:/opt/guacamole/webapp/guacamole.war:ro,Z \
   docker.io/guacamole/guacamole:1.6.0
 ```
 

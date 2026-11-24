@@ -1,0 +1,6 @@
+{
+    "guacamoleVersion" : "*",
+    "name"         : "RTL Lab",
+    "namespace"    : "rtl-lab",
+    "translations" : [ "translations/ar.json" ]
+}
