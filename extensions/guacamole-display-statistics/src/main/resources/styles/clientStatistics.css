@@ -37,7 +37,7 @@ guac-client-statistics div.buttons-statistics {
 guac-client-statistics div.hide-statistics {
     background-image: url('images/x.svg');
     bottom: 10px;
-    right: 20px;
+    inset-inline-end: 20px;
     width: 15px;
 }
 
@@ -69,12 +69,12 @@ guac-client-statistics dl.client-statistics dd {
 }
 
 guac-client-statistics dl.client-statistics dt {
-    padding-right: 0.5em;
-    padding-left: 1em;
+    padding-inline-end: 0.5em;
+    padding-inline-start: 1em;
 }
 
 guac-client-statistics dl.client-statistics dt:first-child {
-    padding-left: 0.5em;
+    padding-inline-start: 0.5em;
 }
 
 guac-client-statistics dl.client-statistics dd {
